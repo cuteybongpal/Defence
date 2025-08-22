@@ -1,0 +1,94 @@
+{
+	"PlayerDatas" : [
+		{
+			"Name" : "근접",
+			"Hp" : 100,
+			"Mp" : 50,
+			"Attack" : 20,
+			"Range" : 1,
+			"InventorySize" : 4,
+			"Critical" : 0.1,
+			"Speed" : 5,
+			"Skills" :[
+				{
+					"Path" : "",
+					"Damage" : 0,
+					"CoolDown" : 0,
+					"MpCost" : 0
+				},
+				{
+					"Path" : "",
+					"Damage" : 0,
+					"CoolDown" : 0,
+					"MpCost" : 0
+				},
+				{
+					"Path" : "",
+					"Damage" : 0,
+					"CoolDown" : 0,
+					"MpCost" : 0
+				}
+			]
+		},
+		{
+			"Name" : "원거리",
+			"Hp" : 80,
+			"Mp" : 70,
+			"Attack" : 15,
+			"Range" : 3,
+			"InventorySize" : 4,
+			"Critical" : 0.2,
+			"Speed" : 5,
+			"Skills" :[
+				{
+					"Path" : "",
+					"Damage" : 0,
+					"CoolDown" : 0,
+					"MpCost" : 0
+				},
+				{
+					"Path" : "",
+					"Damage" : 0,
+					"CoolDown" : 0,
+					"MpCost" : 0
+				},
+				{
+					"Path" : "",
+					"Damage" : 0,
+					"CoolDown" : 0,
+					"MpCost" : 0
+				}
+			]
+		},
+		{
+			"Name" : "마법",
+			"Hp" : 70,
+			"Mp" : 150,
+			"Attack" : 10,
+			"Range" : 3,
+			"InventorySize" : 4,
+			"Critical" : 0,
+			"Speed" : 5,
+			"Skills" :[
+				{
+					"Path" : "",
+					"Damage" : 0,
+					"CoolDown" : 0,
+					"MpCost" : 0
+				},
+				{
+					"Path" : "",
+					"Damage" : 0,
+					"CoolDown" : 0,
+					"MpCost" : 0
+				},
+				{
+					"Path" : "",
+					"Damage" : 0,
+					"CoolDown" : 0,
+					"MpCost" : 0
+				}
+			]
+		}
+	]
+}
