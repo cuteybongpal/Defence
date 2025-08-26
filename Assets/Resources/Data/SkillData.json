@@ -1,0 +1,291 @@
+{
+	"SkillDatas" :[
+		{
+			"Id" : 0,
+			"Name" : "Crit",
+			"Category" : "Passive",
+			"MaxLevel" : 5,
+			"Level" : 1,
+			"Magnitude" : 0.1,
+			"Op" : {
+				"operation" : "add"
+			}
+		},
+		{
+			"Id" : 1,
+			"Name" : "Crit",
+			"Category" : "Passive",
+			"MaxLevel" : 5,
+			"Level" : 2,
+			"Magnitude" : 0.2,
+			"Op" : {
+				"operation" : "add"
+			}
+		},
+		{
+			"Id" : 2,
+			"Name" : "Crit",
+			"Category" : "Passive",
+			"MaxLevel" : 5,
+			"Level" : 3,
+			"Magnitude" : 0.3,
+			"Op" : {
+				"operation" : "add"
+			}
+		},
+		{
+			"Id" : 3,
+			"Name" : "Crit",
+			"Category" : "Passive",
+			"MaxLevel" : 5,
+			"Level" : 4,
+			"Magnitude" : 0.4,
+			"Op" : {
+				"operation" : "add"
+			}
+		},
+		{
+			"Id" : 4,
+			"Name" : "Crit",
+			"Category" : "Passive",
+			"MaxLevel" : 5,
+			"Level" : 5,
+			"Magnitude" : 0.5,
+			"Op" : {
+				"operation" : "add"
+			}
+		},
+		{
+			"Id" : 5,
+			"Name" : "AttackSpeed",
+			"Category" : "Passive",
+			"MaxLevel" : 2,
+			"Level" : 1,
+			"Magnitude" : 0.5,
+			"Op" : {
+				"operation" : "addPercent"
+			}
+		},
+		{
+			"Id" : 6,
+			"Name" : "AttackSpeed",
+			"Category" : "Passive",
+			"MaxLevel" : 2,
+			"Level" : 2,
+			"Magnitude" : 1,
+			"Op" : {
+				"operation" : "addPercent"
+			}
+		},
+		{
+			"Id" : 7,
+			"Name" : "Single Attack",
+			"Category" : "Active",
+			"MaxLevel" : 5,
+			"Level" : 1,
+			"Activation" : {
+				"Trigger" : "KeyDown",
+				"Path" : "",
+				"Range" : 1,
+				"Type": {
+					"SkillType" : "Projectile",
+					"MoveType" : "Targeting",
+					"Speed" : 5
+				},
+				"CoolDown" : 3,
+				"MpCost" : 10,
+				"Damage" : 1.2,
+				"Op" : {
+				"operation" : "mul"
+				}
+			}
+		},
+		{
+			"Id" : 8,
+			"Name" : "Single Attack",
+			"Category" : "Active",
+			"MaxLevel" : 5,
+			"Level" : 2,
+			"Activation" : {
+				"Trigger" : "KeyDown",
+				"Path" : "",
+				"Range" : 1,
+				"Type": {
+					"SkillType" : "Projectile",
+					"MoveType" : "Targeting",
+					"Speed" : 5
+				},
+				"CoolDown" : 3,
+				"MpCost" : 11,
+				"Damage" : 1.4,
+				"Op" : {
+					"operation" : "mul"
+				}
+			}
+		},
+		{
+			"Id" : 9,
+			"Name" : "Single Attack",
+			"Category" : "Active",
+			"MaxLevel" : 5,
+			"Level" : 3,
+			"Activation" : {
+				"Trigger" : "KeyDown",
+				"Path" : "",
+				"Range" : 1,
+				"Type": {
+					"SkillType" : "Projectile",
+					"MoveType" : "Targeting",
+					"Speed" : 5
+				},
+				"CoolDown" : 2,
+				"MpCost" : 12,
+				"Damage" : 1.6,
+				"Op" : {
+					"operation" : "mul"
+				}
+			}
+		},
+		{
+			"Id" : 10,
+			"Name" : "Single Attack",
+			"Category" : "Active",
+			"MaxLevel" : 5,
+			"Level" : 4,
+			"Activation" : {
+				"Trigger" : "KeyDown",
+				"Path" : "",
+				"Range" : 1,
+				"Type": {
+					"SkillType" : "Projectile",
+					"MoveType" : "Targeting",
+					"Speed" : 5
+				},
+				"CoolDown" : 2,
+				"MpCost" : 13,
+				"Damage" : 1.8,
+				"Op" : {
+					"operation" : "mul"
+				}
+			}
+		},
+		{
+			"Id" : 11,
+			"Name" : "Single Attack",
+			"Category" : "Active",
+			"MaxLevel" : 5,
+			"Level" : 5,
+			"Activation" : {
+				"Trigger" : "KeyDown",
+				"Path" : "",
+				"Range" : 1,
+				"Type": {
+					"SkillType" : "Projectile",
+					"MoveType" : "Targeting",
+					"Speed" : 5
+				},
+				"CoolDown" : 2,
+				"MpCost" : 15,
+				"Damage" : 2,
+				"Op" : {
+					"operation" : "mul"
+				}
+			}
+		},
+		{
+			"Id" : 12,
+			"Name": "Muliti Attack",
+			"Category" : "Active",
+			"MaxLevel" : 5,
+			"Level" : 1,
+			"Activation" : {
+				"Trigger" : "KeyDown",
+				"Path" : "",
+				"Range" : 1,
+				"CoolDown" : 3,
+				"MpCost" : 12,
+				"Damage" : 1,
+				"TargetCount" : 2,
+				"Op" : {
+					"operation" : "mulPercent"
+				}
+			}
+		},
+		{
+			"Id" : 13,
+			"Name": "Muliti Attack",
+			"Category" : "Active",
+			"MaxLevel" : 5,
+			"Level" : 2,
+			"Activation" : {
+				"Trigger" : "KeyDown",
+				"Path" : "",
+				"Range" : 1,
+				"CoolDown" : 3,
+				"MpCost" : 15,
+				"Damage" : 1.2,
+				"TargetCount" : 3,
+				"Op" : {
+					"operation" : "mulPercent"
+				}
+			}
+		},
+		{
+			"Id" : 14,
+			"Name": "Muliti Attack",
+			"Category" : "Active",
+			"MaxLevel" : 5,
+			"Level" : 3,
+			"Activation" : {
+				"Trigger" : "KeyDown",
+				"Path" : "",
+				"Range" : 1,
+				"CoolDown" : 2,
+				"MpCost" : 18,
+				"Damage" : 1.2,
+				"TargetCount" : 3,
+				"Op" : {
+					"operation" : "mulPercent"
+				}
+			}
+		},
+		{
+			"Id" : 15,
+			"Name": "Muliti Attack",
+			"Category" : "Active",
+			"MaxLevel" : 5,
+			"Level" : 4,
+			"Activation" : {
+				"Trigger" : "KeyDown",
+				"Path" : "",
+				"Range" : 1,
+				"CoolDown" : 2,
+				"MpCost" : 20,
+				"Damage" : 1.4,
+				"TargetCount" : 4,
+				"Op" : {
+					"operation" : "mulPercent"
+				}
+			}
+		},
+		{
+			"Id" : 16,
+			"Name": "Muliti Attack",
+			"Category" : "Active",
+			"MaxLevel" : 5,
+			"Level" : 5,
+			"Activation" : {
+				"Trigger" : "KeyDown",
+				"Path" : "",
+				"Range" : 1,
+				"CoolDown" : 2,
+				"MpCost" : 22,
+				"Damage" : 1.4,
+				"TargetCount" : 5,
+				"Op" : {
+					"operation" : "mulPercent"
+				}
+			}
+		}
+	]
+}

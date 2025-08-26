@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,6 +34,9 @@ public class GameManager : MonoBehaviour
         if (inputManager == null)
             return;
         inputManager.Update();
+        Vector3 camPos = ControllingObject.Transform.position;
+        camPos.z = -10;
+        Camera.main.transform.position = camPos;
     }
     void UserKeyBoardInput(KeyCode clickedKey)
     {
@@ -43,5 +48,56 @@ public class GameManager : MonoBehaviour
             return;
 
         ControllingObject.Move(mousePos, clickedMouseButton, isDown);
+    }
+    public void ChangeControllingObject(int idx)
+    {
+        
+        PlayableObject player = ControllingObject as PlayableObject;
+        //hp UI에 보여주는 이벤트 없애기 
+        if (player != null)
+        {
+            player.HpChange -= BindingPlayerHpAction;
+            player.MpChange -= BindingPlayerMpAction;
+            player.ExpChange -= BindingPlayerExpAction;
+        }
+        
+        ControllingObject = ControllablesObjects[idx];
+        player = ControllingObject as PlayableObject;
+
+        player.HpChange += BindingPlayerHpAction;
+        player.MpChange += BindingPlayerMpAction;
+        player.ExpChange += BindingPlayerExpAction;
+
+        player.MpChange?.Invoke(player.CurrentMp);
+        player.HpChange?.Invoke(player.CurrentHp);
+        player.ExpChange?.Invoke(player.Lv, player.CurrentExp);
+    }
+    void BindingPlayerMpAction(float value)
+    {
+        PlayableObject player = ControllingObject as PlayableObject;
+        GameSceneUI ui = ServiceLocator.Get<UIManager>().GetMainUI<GameSceneUI>();
+        if (ui == null)
+            return;
+        ui.ChangeSliderValue(GameSceneUI.Sliders.MpSlider, value / player.PlayerData.Mp);
+        ui.ChangeTextValue(GameSceneUI.Texts.MpText, $"{value:F1} / {player.PlayerData.Mp:F1}");
+    }
+    void BindingPlayerHpAction(float value)
+    {
+        PlayableObject player = ControllingObject as PlayableObject;
+        GameSceneUI ui = ServiceLocator.Get<UIManager>().GetMainUI<GameSceneUI>();
+        if (ui == null)
+            return;
+        ui.ChangeSliderValue(GameSceneUI.Sliders.HpSlider, value / player.PlayerData.Hp);
+        ui.ChangeTextValue(GameSceneUI.Texts.HpText, $"{value:F1} / {player.PlayerData.Hp:F1}");
+    }
+    void BindingPlayerExpAction(int lv, float value)
+    {
+        PlayableObject player = ControllingObject as PlayableObject;
+        GameSceneUI ui = ServiceLocator.Get<UIManager>().GetMainUI<GameSceneUI>();
+        if (ui == null)
+            return;
+        ui.ChangeSliderValue(GameSceneUI.Sliders.ExpSlider, value / player.PlayerData.RequiredExp[lv]);
+        ui.ChangeTextValue(GameSceneUI.Texts.ExpText, $"{100 * value / player.PlayerData.RequiredExp[lv]:F1} %");
+        ui.ChangeTextValue(GameSceneUI.Texts.LvText, $"Lv. {lv}");
     }
 }

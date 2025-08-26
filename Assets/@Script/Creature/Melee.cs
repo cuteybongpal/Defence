@@ -3,39 +3,35 @@ using UnityEngine;
 
 public class Melee : PlayableObject
 {
+    GameObject basicAttack;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        playerData = ServiceLocator.Get<DataManager>().GetPlayerData("근접");
-        currentHp = playerData.Hp;
-
-        GameManager.Instance.ControllablesObjects.Add(this);
-        GameManager.Instance.ControllingObject = this;
+        PlayerData = ServiceLocator.Get<DataManager>().GetPlayerData("근접");
+        CurrentHp = PlayerData.Hp;
+        CurrentMp = PlayerData.Mp;
 
         attackRange = GetComponentInChildren<AttackRange>();
-        attackRange.gameObject.transform.localScale = Vector3.one * playerData.Range;
+        attackRange.gameObject.transform.localScale = Vector3.one * PlayerData.Range;
+
+        basicAttack = ServiceLocator.Get<ResourceManager>().Load<GameObject>(PlayerData.BasicAttackPath);
         StartCoroutine(GainHealing());
+        StartCoroutine(StartAttack());
     }
-    protected override void Skill1()
+    protected override void BasicAttack()
     {
-        Debug.Log("스킬 1");
-    }
-    protected override void Skill2()
-    {
-        Debug.Log("스킬 2");
-    }
-    protected override void Skill3()
-    {
-        Debug.Log("스킬 3");
-    }
-    IEnumerator GainHealing()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(1);
-            currentMp += playerData.Mp / 100f;
-            currentHp += playerData.Hp / 100f;
-        }
+        GameObject go = Instantiate(basicAttack);
+        Projectile bAttack = go.GetComponent<Projectile>();
+        IHit target = attackRange.GetTarget();
+
+        bAttack.Target = target.Transform;
+        bAttack.Owner = transform;
+        bAttack.Damage = PlayerData.Attack;
+        bAttack.HitAction += () => Destroy(bAttack.gameObject);
+        bAttack.ExpAction = GainExp;
+
+        Vector2 dir = (target.Transform.position - transform.position).normalized;
+        bAttack.Shoot(transform.position, dir, PlayerData.Range * 1.5f, 5, -90);
     }
 }

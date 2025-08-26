@@ -1,0 +1,94 @@
+{
+	"CardDatas" :[
+		{
+			"Id" : 0,
+			"OwnerClass" : ["Melee", "Mage", "Ranger"],
+			"Level": [
+				{
+					"Name" : "크리티컬 확률 증가",
+					"SpritePath" : "", 
+					"SkillId" : 0,
+					"Description" : "크리티컬 확률 증가율이 10%가 됩니다."
+				},
+				{
+					"Name" : "크리티컬 확률 증가",
+					"SpritePath" : "",
+					"SkillId" : 1,
+					"Description" : "크리티컬 확률 증가율이 20%가 됩니다."
+				},
+				{
+					"Name" : "크리티컬 확률 증가",
+					"SpritePath" : "",
+					"SkillId" : 2,
+					"Description" : "크리티컬 확률 증가율이 30%가 됩니다."
+				},
+				{
+					"Name" : "크리티컬 확률 증가",
+					"SpritePath" : "",
+					"SkillId" : 3,
+					"Description" : "크리티컬 확률 증가율이 40%가 됩니다."
+				},
+				{
+					"Name" : "크리티컬 확률 증가",
+					"SpritePath" : "",
+					"SkillId" : 4,
+					"Description" : "크리티컬 확률 증가율이 50%가 됩니다."
+				}
+			]
+		},
+		{
+			"Id" : 1,
+			"OwnerClass" : ["Melee", "Mage", "Ranger"],
+			"Level": [
+				{
+					"Name" : "공격 속도 증가",
+					"SpritePath" : "",
+					"SkillId" : 5,
+					"Description" : "공격 속도가 50%빨라집니다."
+				},
+				{
+					"Name" : "공격 속도 증가",
+					"SpritePath" : "",
+					"SkillId" : 6,
+					"Description" : "공격 속도가 100%빨라집니다."
+				}
+			]
+		},
+		{
+			"Id" : 2,
+			"OwnerClass" : ["Melee"],
+			"Level": [
+				{
+					"Name" : "단일 공격",
+					"SpritePath" : "",
+					"SkillId" : 7,
+					"Description" : "120%의 공격력으로 강하게 때리기!"
+				},
+				{
+					"Name" : "공격 속도 증가",
+					"SpritePath" : "",
+					"SkillId" : 8,
+					"Description" : "140%의 공격력으로 강하게 때리기!"
+				},
+				{
+					"Name" : "공격 속도 증가",
+					"SpritePath" : "",
+					"SkillId" : 9,
+					"Description" : "160%의 공격력으로 강하게 때리기!"
+				},
+				{
+					"Name" : "공격 속도 증가",
+					"SpritePath" : "",
+					"SkillId" : 10,
+					"Description" : "180%의 공격력으로 강하게 때리기!"
+				},
+				{
+					"Name" : "공격 속도 증가",
+					"SpritePath" : "",
+					"SkillId" : 11,
+					"Description" : "200%의 공격력으로 강하게 때리기!"
+				}
+			]
+		}
+	]
+}

@@ -1,6 +1,8 @@
+using System;
 using UnityEngine;
 
 public interface IHit
 {
-    public void Hit(float damage);
+    Transform Transform { get; }
+    public void Hit(float damage, Transform Owner);
 }

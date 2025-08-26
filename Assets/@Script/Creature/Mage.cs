@@ -3,38 +3,35 @@ using System.Collections;
 
 public class Mage : PlayableObject
 {
+    GameObject basicAttack;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        playerData = ServiceLocator.Get<DataManager>().GetPlayerData("마법");
-        currentHp = playerData.Hp;
-
-        GameManager.Instance.ControllablesObjects.Add(this);
+        PlayerData = ServiceLocator.Get<DataManager>().GetPlayerData("마법");
+        CurrentHp = PlayerData.Hp;
+        CurrentMp = PlayerData.Mp;
 
         attackRange = GetComponentInChildren<AttackRange>();
-        attackRange.gameObject.transform.localScale = Vector3.one * playerData.Range;
+        attackRange.gameObject.transform.localScale = Vector3.one * PlayerData.Range;
+        basicAttack = ServiceLocator.Get<ResourceManager>().Load<GameObject>(PlayerData.BasicAttackPath);
+
         StartCoroutine(GainHealing());
+        StartCoroutine(StartAttack());
     }
-    protected override void Skill1()
+    protected override void BasicAttack()
     {
-        Debug.Log("스킬 1");
-    }
-    protected override void Skill2()
-    {
-        Debug.Log("스킬 2");
-    }
-    protected override void Skill3()
-    {
-        Debug.Log("스킬 3");
-    }
-    IEnumerator GainHealing()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(1);
-            currentMp += playerData.Mp / 100f;
-            currentHp += playerData.Hp / 100f;
-        }
+        GameObject go = Instantiate(basicAttack);
+        Projectile skill = go.GetComponent<Projectile>();
+
+        IHit target = attackRange.GetTarget();
+        Vector2 dir = (target.Transform.position - transform.position).normalized;
+
+        skill.Owner = transform;
+        skill.Target = null;
+        skill.Damage = PlayerData.Attack;
+        skill.ExpAction = GainExp;
+
+        skill.Shoot(transform.position, dir, 1.5f * PlayerData.Range, 7, -90);
     }
 }

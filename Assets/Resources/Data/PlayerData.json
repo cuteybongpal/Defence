@@ -9,26 +9,8 @@
 			"InventorySize" : 4,
 			"Critical" : 0.1,
 			"Speed" : 5,
-			"Skills" :[
-				{
-					"Path" : "",
-					"Damage" : 0,
-					"CoolDown" : 0,
-					"MpCost" : 0
-				},
-				{
-					"Path" : "",
-					"Damage" : 0,
-					"CoolDown" : 0,
-					"MpCost" : 0
-				},
-				{
-					"Path" : "",
-					"Damage" : 0,
-					"CoolDown" : 0,
-					"MpCost" : 0
-				}
-			]
+			"BasicAttackPath" : "Prefab/Melee/BasicAttack",
+			"RequiredExp" : [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]
 		},
 		{
 			"Name" : "원거리",
@@ -39,26 +21,8 @@
 			"InventorySize" : 4,
 			"Critical" : 0.2,
 			"Speed" : 5,
-			"Skills" :[
-				{
-					"Path" : "",
-					"Damage" : 0,
-					"CoolDown" : 0,
-					"MpCost" : 0
-				},
-				{
-					"Path" : "",
-					"Damage" : 0,
-					"CoolDown" : 0,
-					"MpCost" : 0
-				},
-				{
-					"Path" : "",
-					"Damage" : 0,
-					"CoolDown" : 0,
-					"MpCost" : 0
-				}
-			]
+			"BasicAttackPath" : "Prefab/Ranger/BasicAttack",
+			"RequiredExp" : [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]
 		},
 		{
 			"Name" : "마법",
@@ -69,26 +33,8 @@
 			"InventorySize" : 4,
 			"Critical" : 0,
 			"Speed" : 5,
-			"Skills" :[
-				{
-					"Path" : "",
-					"Damage" : 0,
-					"CoolDown" : 0,
-					"MpCost" : 0
-				},
-				{
-					"Path" : "",
-					"Damage" : 0,
-					"CoolDown" : 0,
-					"MpCost" : 0
-				},
-				{
-					"Path" : "",
-					"Damage" : 0,
-					"CoolDown" : 0,
-					"MpCost" : 0
-				}
-			]
+			"BasicAttackPath" : "Prefab/Mage/BasicAttack",
+			"RequiredExp" : [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]
 		}
 	]
 }

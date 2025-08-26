@@ -4,6 +4,7 @@ using UnityEngine;
 
 public interface IControllable 
 {
+    public Transform Transform { get; }
     public void Move(Vector2 mousePos, KeyCode clickType, bool isDown);
     public void KeyAction(KeyCode keyCode,Vector2 mousePos);
 }
