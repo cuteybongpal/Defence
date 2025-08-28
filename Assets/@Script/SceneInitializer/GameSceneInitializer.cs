@@ -4,11 +4,12 @@ public class GameSceneInitializer : MonoBehaviour
 {
     void Awake()
     {
-        ServiceLocator.Set<DataManager>(new DataManager());
-        ServiceLocator.Set<InputManager>(new InputManager());
-        ServiceLocator.Set<SoundManager>(new SoundManager());
-        ServiceLocator.Set<ResourceManager>(new ResourceManager());
-        ServiceLocator.Set<UIManager>(new UIManager());
+        ServiceLocator.Set(new DataManager());
+        ServiceLocator.Set(new InputManager());
+        ServiceLocator.Set(new SoundManager());
+        ServiceLocator.Set(new ResourceManager());
+        ServiceLocator.Set(new LevelUpService());
+        ServiceLocator.Set(new UIManager());
         
         GameObject go1 = ServiceLocator.Get<ResourceManager>().Load<GameObject>("Prefab/Melee");
         GameObject go2 = ServiceLocator.Get<ResourceManager>().Load<GameObject>("Prefab/Ranger");

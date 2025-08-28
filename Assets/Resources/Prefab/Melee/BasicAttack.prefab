@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4914940868531082760}
   - component: {fileID: 8141224424209172784}
   - component: {fileID: 4496821834175320688}
-  - component: {fileID: 2877319871535310761}
+  - component: {fileID: -6692912427584132208}
   m_Layer: 0
   m_Name: BasicAttack
   m_TagString: Untagged
@@ -163,7 +163,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2877319871535310761
+--- !u!114 &-6692912427584132208
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4112308898241922884}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecaff2de96493cd4e85194fd3b54f72f, type: 3}
+  m_Script: {fileID: 11500000, guid: 071fe872ecd885141a73a4f5d5508fa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Owner: {fileID: 0}

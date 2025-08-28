@@ -5,20 +5,16 @@ public class SkillExecuter : MonoBehaviour
 {
     public Skill Skill;
 
-    public void Execute()
+    private void Start()
     {
-        
+        StartCoroutine(Skill.SkillMove.Move());
     }
-    IEnumerator StartMove()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        while (true)
-        {
-            yield return null;
-        }
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        
+        if (Skill.SkillHitFilter == null)
+            Debug.Log("null¿”");
+        Collider2D collider = Skill.SkillHitFilter.ResolveHit(other);
+        Skill.SkillEffect.Apply(collider);
     }
 }
 public class Skill
@@ -26,5 +22,5 @@ public class Skill
     public Transform Target;
     public ISkillDeliver SkillMove;
     public ISkillEffect SkillEffect;
-    public ISkillHitResolver Hit;
+    public ISkillHitResolver SkillHitFilter;
 }

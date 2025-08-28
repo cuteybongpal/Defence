@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6575691016753651148}
   - component: {fileID: 1879019424395109987}
-  - component: {fileID: 5933090569187909515}
   - component: {fileID: 1319151196330573586}
   - component: {fileID: 8679399356675335480}
+  - component: {fileID: -2358927479878647036}
   m_Layer: 0
   m_Name: BasicAttack
   m_TagString: Untagged
@@ -90,21 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5933090569187909515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 296961136075312657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecaff2de96493cd4e85194fd3b54f72f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Owner: {fileID: 0}
-  Target: {fileID: 0}
-  Damage: 0
 --- !u!61 &1319151196330573586
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -178,3 +163,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-2358927479878647036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296961136075312657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 071fe872ecd885141a73a4f5d5508fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Owner: {fileID: 0}
+  Target: {fileID: 0}
+  Damage: 0

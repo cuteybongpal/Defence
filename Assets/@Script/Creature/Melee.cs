@@ -8,7 +8,7 @@ public class Melee : PlayableObject
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        PlayerData = ServiceLocator.Get<DataManager>().GetPlayerData("±Ÿ¡¢");
+        PlayerData = ServiceLocator.Get<DataManager>().GetPlayerData("Melee");
         CurrentHp = PlayerData.Hp;
         CurrentMp = PlayerData.Mp;
 

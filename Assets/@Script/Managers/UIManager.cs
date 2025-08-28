@@ -4,7 +4,7 @@ using UnityEngine;
 public class UIManager : IService
 {
     private BaseUI mainUI;
-    private List<PopupUI> popupUIs;
+    private List<PopupUI> popupUIs = new List<PopupUI>();
     //properties
 
     public BaseUI MainUI 
@@ -23,12 +23,18 @@ public class UIManager : IService
     {
         popupUIs.Remove(popup);
     }
-    public T ShowUI<T>(string path) where T : BaseUI
+    public T ShowUI<T>() where T : BaseUI
     {
         ResourceManager res = ServiceLocator.Get<ResourceManager>();
-        GameObject go = GameObject.Instantiate(res.Load<GameObject>(path));
+        GameObject go = GameObject.Instantiate(res.Load<GameObject>($"Prefab/UI/{typeof(T).Name}"));
         T ui = go.GetComponent<T>();
         return ui;
-
+    }
+    public T ShowPopupUI<T>() where T : PopupUI
+    {
+        ResourceManager res = ServiceLocator.Get<ResourceManager>();
+        GameObject go = GameObject.Instantiate(res.Load<GameObject>($"Prefab/UI/Popup/{typeof(T).Name}"));
+        T ui = go.GetComponent<T>();
+        return ui;
     }
 }

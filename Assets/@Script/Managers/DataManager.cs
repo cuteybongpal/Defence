@@ -38,7 +38,7 @@ public class DataManager : IService
         if (playerDataDict == null)
         {
             ResourceManager res = ServiceLocator.Get<ResourceManager>();
-            playerDataDict = JsonUtility.FromJson<PlayerDataLoader>(res.Load<TextAsset>("Data/CardData").text).MakeDict();
+            playerDataDict = JsonUtility.FromJson<PlayerDataLoader>(res.Load<TextAsset>("Data/PlayerData").text).MakeDict();
         }
         if (playerDataDict.TryGetValue(name, out PlayerData data))
             return data;
@@ -50,7 +50,7 @@ public class DataManager : IService
         if (cardLDataDict == null)
         {
             ResourceManager res = ServiceLocator.Get<ResourceManager>();
-            cardLDataDict = JsonUtility.FromJson<CardDataLoader>(res.Load<TextAsset>("Data/PlayerData").text).MakeDict();
+            cardLDataDict = JsonUtility.FromJson<CardDataLoader>(res.Load<TextAsset>("Data/CardData").text).MakeDict();
         }
         if (cardLDataDict.TryGetValue(name, out List<CardData> data))
             return data;
@@ -62,7 +62,7 @@ public class DataManager : IService
         if (skillDataDict == null)
         {
             ResourceManager res = ServiceLocator.Get<ResourceManager>();
-            skillDataDict = JsonUtility.FromJson<SkillDataLoader>(res.Load<TextAsset>("Data/PlayerData").text).MakeDict();
+            skillDataDict = JsonUtility.FromJson<SkillDataLoader>(res.Load<TextAsset>("Data/SkillData").text).MakeDict();
         }
         if (skillDataDict.TryGetValue(skillId, out SkillData data))
             return data;
@@ -99,17 +99,21 @@ public struct PlayerData
     public string Class;
     public int Hp;
     public int Mp;
-    public int Attack;
+    public float Attack;
+    public float AttackSpeed;
     public int Range;
     public int InventorySize;
-    public float Ciritical;
+    public float Critical;
     public int Speed;
     public string BasicAttackPath;
+    public int GrowthHealth;
+    public int GrowthAttack;
     public List<int> RequiredExp;
 }
+[Serializable]
 public class SkillDataLoader : ILoader<int, SkillData>
 {
-    List<SkillData> SkillDatas;
+    public List<SkillData> SkillDatas;
 
     public Dictionary<int, SkillData> MakeDict()
     {
@@ -128,9 +132,10 @@ public class SkillData
     public string Name;
     public string Category;
     public int MaxLevel;
-    public List<string> OnwerClass;
     public int Level;
+    public float Magnitude;
     public Activator Activation;
+    public Operator Op;
     
 }
 [Serializable]
@@ -160,7 +165,7 @@ public class Activator
     public float Range;
     public ActivateType Type;
     public float CoolDown;
-    public float Cost;
+    public float MpCost;
     public float Damage;
     public int TargetCount;
     public Operator Op;
@@ -179,13 +184,13 @@ public class ActivateType
 [Serializable]
 public class CardDataLoader : ILoader<string, List<CardData>>
 {
-    public List<CardData> CardDatas = new List<CardData>();
+    public List<CardData> CardDatas;
     public Dictionary<string, List<CardData>> MakeDict()
     {
         Dictionary<string, List<CardData>> dict = new Dictionary<string, List<CardData>>();
         foreach (CardData cardData in CardDatas)
         {
-            foreach(string key in cardData.OnwerClass)
+            foreach(string key in cardData.OwnerClass)
             {
                 if (!dict.ContainsKey(key))
                     dict.Add(key, new List<CardData>());
@@ -195,12 +200,14 @@ public class CardDataLoader : ILoader<string, List<CardData>>
         return dict;
     }
 }
+[Serializable]
 public class CardData
 {
     public int Id;
-    public List<string> OnwerClass;
+    public List<string> OwnerClass;
     public List<CardLevelData> Level;
 }
+[Serializable]
 public class CardLevelData
 {
     public string Name;

@@ -6,31 +6,31 @@
 			"Level": [
 				{
 					"Name" : "크리티컬 확률 증가",
-					"SpritePath" : "", 
+					"SpritePath" : "Sprite/Skill/Crit", 
 					"SkillId" : 0,
 					"Description" : "크리티컬 확률 증가율이 10%가 됩니다."
 				},
 				{
 					"Name" : "크리티컬 확률 증가",
-					"SpritePath" : "",
+					"SpritePath" : "Sprite/Skill/Crit",
 					"SkillId" : 1,
 					"Description" : "크리티컬 확률 증가율이 20%가 됩니다."
 				},
 				{
 					"Name" : "크리티컬 확률 증가",
-					"SpritePath" : "",
+					"SpritePath" : "Sprite/Skill/Crit",
 					"SkillId" : 2,
 					"Description" : "크리티컬 확률 증가율이 30%가 됩니다."
 				},
 				{
 					"Name" : "크리티컬 확률 증가",
-					"SpritePath" : "",
+					"SpritePath" : "Sprite/Skill/Crit",
 					"SkillId" : 3,
 					"Description" : "크리티컬 확률 증가율이 40%가 됩니다."
 				},
 				{
 					"Name" : "크리티컬 확률 증가",
-					"SpritePath" : "",
+					"SpritePath" : "Sprite/Skill/Crit",
 					"SkillId" : 4,
 					"Description" : "크리티컬 확률 증가율이 50%가 됩니다."
 				}
@@ -42,51 +42,177 @@
 			"Level": [
 				{
 					"Name" : "공격 속도 증가",
-					"SpritePath" : "",
+					"SpritePath" : "Sprite/Skill/AttackSpeed",
 					"SkillId" : 5,
 					"Description" : "공격 속도가 50%빨라집니다."
 				},
 				{
 					"Name" : "공격 속도 증가",
-					"SpritePath" : "",
+					"SpritePath" : "Sprite/Skill/AttackSpeed",
 					"SkillId" : 6,
 					"Description" : "공격 속도가 100%빨라집니다."
+				},
+				{
+					"Name" : "공격 속도 증가",
+					"SpritePath" : "Sprite/Skill/AttackSpeed",
+					"SkillId" : 7,
+					"Description" : "공격 속도가 150%빨라집니다."
+				},
+				{
+					"Name" : "공격 속도 증가",
+					"SpritePath" : "Sprite/Skill/AttackSpeed",
+					"SkillId" : 8,
+					"Description" : "공격 속도가 200%빨라집니다."
+				},
+				{
+					"Name" : "공격 속도 증가",
+					"SpritePath" : "Sprite/Skill/AttackSpeed",
+					"SkillId" : 9,
+					"Description" : "공격 속도가 300%빨라집니다."
 				}
 			]
 		},
 		{
 			"Id" : 2,
+			"OwnerClass" : ["Melee", "Mage", "Ranger"],
+			"Level": [
+				{
+					"Name" : "체력 증가",
+					"SpritePath" : "Sprite/Skill/Health",
+					"SkillId" : 10,
+					"Description" : "체력 200 증가"
+				},
+				{
+					"Name" : "체력 증가",
+					"SpritePath" : "Sprite/Skill/Health",
+					"SkillId" : 11,
+					"Description" : "체력 400 증가"
+				},
+				{
+					"Name" : "체력 증가",
+					"SpritePath" : "Sprite/Skill/Health",
+					"SkillId" : 12,
+					"Description" : "체력 600 증가"
+				},
+				{
+					"Name" : "체력 증가",
+					"SpritePath" : "Sprite/Skill/Health",
+					"SkillId" : 13,
+					"Description" : "체력 800 증가"
+				},
+				{
+					"Name" : "체력 증가",
+					"SpritePath" : "Sprite/Skill/Health",
+					"SkillId" : 14,
+					"Description" : "체력 1000 증가"
+				}
+			]
+		},
+		{
+			"Id" : 3,
+			"OwnerClass" : ["Melee", "Mage", "Ranger"],
+			"Level": [
+				{
+					"Name" : "이동속도 증가",
+					"SpritePath" : "Sprite/Skill/Speed",
+					"SkillId" : 15,
+					"Description" : "속도 50%증가"
+				},
+				{
+					"Name" : "이동속도 증가",
+					"SpritePath" : "Sprite/Skill/Speed",
+					"SkillId" : 16,
+					"Description" : "속도 100%증가"
+				},
+				{
+					"Name" : "이동속도 증가",
+					"SpritePath" : "Sprite/Skill/Speed",
+					"SkillId" : 17,
+					"Description" : "속도 120%증가"
+				},
+				{
+					"Name" : "이동속도 증가",
+					"SpritePath" : "Sprite/Skill/Speed",
+					"SkillId" : 18,
+					"Description" : "속도 150%증가"
+				},
+				{
+					"Name" : "이동속도 증가",
+					"SpritePath" : "Sprite/Skill/Speed",
+					"SkillId" : 19,
+					"Description" : "속도 200%증가"
+				}
+			]
+		},
+		{
+			"Id" : 4,
+			"OwnerClass" : ["Melee", "Mage", "Ranger"],
+			"Level": [
+				{
+					"Name" : "공격력 증가",
+					"SpritePath" : "Sprite/Skill/Attack",
+					"SkillId" : 20,
+					"Description" : "공격력 20%증가"
+				},
+				{
+					"Name" : "공격력 증가",
+					"SpritePath" : "Sprite/Skill/Attack",
+					"SkillId" : 21,
+					"Description" : "공격력 40%증가"
+				},
+				{
+					"Name" : "공격력 증가",
+					"SpritePath" : "Sprite/Skill/Attack",
+					"SkillId" : 22,
+					"Description" : "공격력 60%증가"
+				},
+				{
+					"Name" : "공격력 증가",
+					"SpritePath" : "Sprite/Skill/Attack",
+					"SkillId" : 23,
+					"Description" : "공격력 80%증가"
+				},
+				{
+					"Name" : "공격력 증가",
+					"SpritePath" : "Sprite/Skill/Attack",
+					"SkillId" : 24,
+					"Description" : "공격력 100%증가"
+				}
+			]
+		},
+		{
+			"Id" : 5,
 			"OwnerClass" : ["Melee"],
 			"Level": [
 				{
-					"Name" : "단일 공격",
-					"SpritePath" : "",
-					"SkillId" : 7,
-					"Description" : "120%의 공격력으로 강하게 때리기!"
+					"Name" : "강공",
+					"SpritePath" : "Sprite/Skill/StrongAttack",
+					"SkillId" : 25,
+					"Description" : "120%의 공격력으로 공격함"
 				},
 				{
-					"Name" : "공격 속도 증가",
-					"SpritePath" : "",
-					"SkillId" : 8,
-					"Description" : "140%의 공격력으로 강하게 때리기!"
+					"Name" : "공격력 증가",
+					"SpritePath" : "Sprite/Skill/StrongAttack",
+					"SkillId" : 26,
+					"Description" : "140%의 공격력으로 공격함"
 				},
 				{
-					"Name" : "공격 속도 증가",
-					"SpritePath" : "",
-					"SkillId" : 9,
-					"Description" : "160%의 공격력으로 강하게 때리기!"
+					"Name" : "공격력 증가",
+					"SpritePath" : "Sprite/Skill/StrongAttack",
+					"SkillId" : 27,
+					"Description" : "160%의 공격력으로 공격함"
 				},
 				{
-					"Name" : "공격 속도 증가",
-					"SpritePath" : "",
-					"SkillId" : 10,
-					"Description" : "180%의 공격력으로 강하게 때리기!"
+					"Name" : "공격력 증가",
+					"SpritePath" : "Sprite/Skill/StrongAttack",
+					"SkillId" : 28,
+					"Description" : "180%의 공격력으로 공격함"
 				},
 				{
-					"Name" : "공격 속도 증가",
-					"SpritePath" : "",
-					"SkillId" : 11,
-					"Description" : "200%의 공격력으로 강하게 때리기!"
+					"Name" : "공격력 증가",
+					"SpritePath" : "Sprite/Skill/StrongAttack",
+					"SkillId" : 29,
+					"Description" : "200%의 공격력으로 공격함"
 				}
 			]
 		}

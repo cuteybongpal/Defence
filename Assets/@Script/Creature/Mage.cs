@@ -8,7 +8,7 @@ public class Mage : PlayableObject
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        PlayerData = ServiceLocator.Get<DataManager>().GetPlayerData("¸¶¹ý");
+        PlayerData = ServiceLocator.Get<DataManager>().GetPlayerData("Mage");
         CurrentHp = PlayerData.Hp;
         CurrentMp = PlayerData.Mp;
 

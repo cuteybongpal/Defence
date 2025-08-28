@@ -21,4 +21,5 @@ public class Define
         Targeting,
         Straight
     }
+    public static KeyCode[] KeyBinding = { KeyCode.Q, KeyCode.W, KeyCode.E, KeyCode.R, KeyCode.T, KeyCode.Y };
 }

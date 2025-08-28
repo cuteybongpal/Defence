@@ -16,9 +16,9 @@ public class Dummy : MonoBehaviour, IHit
     public void Hit(float damage, Transform Owner)
     {
         if (damage > currentHp)
-            Owner.GetComponent<PlayableObject>().GainExp((float)Exp * currentHp / (float)MaxHp);
+            Owner.GetComponent<PlayableObject>().GainExp(Exp * currentHp / MaxHp);
         else
-            Owner.GetComponent<PlayableObject>().GainExp((float)Exp * damage / (float)MaxHp);
+            Owner.GetComponent<PlayableObject>().GainExp(Exp * damage / MaxHp);
 
         currentHp -= damage;
         Debug.Log($"데미지 입음! {damage}");

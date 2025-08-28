@@ -1,40 +1,49 @@
 {
 	"PlayerDatas" : [
 		{
-			"Name" : "근접",
+			"Class" : "Melee",
 			"Hp" : 100,
 			"Mp" : 50,
 			"Attack" : 20,
+			"AttackSpeed" : 1,
 			"Range" : 1,
 			"InventorySize" : 4,
 			"Critical" : 0.1,
 			"Speed" : 5,
 			"BasicAttackPath" : "Prefab/Melee/BasicAttack",
-			"RequiredExp" : [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]
+			"GrowthHealth" : 20,
+			"GrowthAttack" : 10,
+			"RequiredExp" : [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210]
 		},
 		{
-			"Name" : "원거리",
+			"Class" : "Ranger",
 			"Hp" : 80,
 			"Mp" : 70,
 			"Attack" : 15,
+			"AttackSpeed" : 1,
 			"Range" : 3,
 			"InventorySize" : 4,
 			"Critical" : 0.2,
 			"Speed" : 5,
 			"BasicAttackPath" : "Prefab/Ranger/BasicAttack",
-			"RequiredExp" : [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]
+			"GrowthHealth" : 15,
+			"GrowthAttack" : 8,
+			"RequiredExp" : [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210]
 		},
 		{
-			"Name" : "마법",
+			"Class" : "Mage",
 			"Hp" : 70,
 			"Mp" : 150,
 			"Attack" : 10,
+			"AttackSpeed" : 1,
 			"Range" : 3,
 			"InventorySize" : 4,
 			"Critical" : 0,
 			"Speed" : 5,
 			"BasicAttackPath" : "Prefab/Mage/BasicAttack",
-			"RequiredExp" : [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]
+			"GrowthHealth" : 10,
+			"GrowthAttack" : 10,
+			"RequiredExp" : [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210]
 		}
 	]
 }

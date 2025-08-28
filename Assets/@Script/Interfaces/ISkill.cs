@@ -1,8 +1,9 @@
+using System.Collections;
 using UnityEngine;
 
 public interface ISkillDeliver
 {
-    public void Move();
+    public IEnumerator Move();
 }
 public interface ISkillHitResolver
 {
@@ -11,4 +12,9 @@ public interface ISkillHitResolver
 public interface ISkillEffect
 {
     public void Apply(Collider2D targets);
+}
+public interface ISkillUse
+{
+    public SkillData SkillData { get; set; }
+    public bool UseSkill(PlayableObject player);
 }

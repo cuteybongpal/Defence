@@ -37,7 +37,18 @@ public class AttackRange : MonoBehaviour
         IHit[] targets = new IHit[cnt];
 
         int idx = 0;
-        foreach (IHit hit in targets)
+
+        for (int i = 0; i < this.targets.Count;)
+        {
+            if (this.targets[i] == null)
+            {
+                this.targets.RemoveAt(i);
+                continue;
+            }
+            i++;
+        }
+
+        foreach (IHit hit in this.targets)
         {
             if (!hit.Transform.gameObject.activeSelf)
                 continue;

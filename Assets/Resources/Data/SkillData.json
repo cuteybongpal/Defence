@@ -59,7 +59,7 @@
 			"Id" : 5,
 			"Name" : "AttackSpeed",
 			"Category" : "Passive",
-			"MaxLevel" : 2,
+			"MaxLevel" : 5,
 			"Level" : 1,
 			"Magnitude" : 0.5,
 			"Op" : {
@@ -70,7 +70,7 @@
 			"Id" : 6,
 			"Name" : "AttackSpeed",
 			"Category" : "Passive",
-			"MaxLevel" : 2,
+			"MaxLevel" : 5,
 			"Level" : 2,
 			"Magnitude" : 1,
 			"Op" : {
@@ -79,113 +79,316 @@
 		},
 		{
 			"Id" : 7,
+			"Name" : "AttackSpeed",
+			"Category" : "Passive",
+			"MaxLevel" : 5,
+			"Level" : 3,
+			"Magnitude" : 1.5,
+			"Op" : {
+				"operation" : "addPercent"
+			}
+		},
+		{
+			"Id" : 8,
+			"Name" : "AttackSpeed",
+			"Category" : "Passive",
+			"MaxLevel" : 5,
+			"Level" : 4,
+			"Magnitude" : 2,
+			"Op" : {
+				"operation" : "addPercent"
+			}
+		},
+		{
+			"Id" : 9,
+			"Name" : "AttackSpeed",
+			"Category" : "Passive",
+			"MaxLevel" : 5,
+			"Level" : 5,
+			"Magnitude" : 3,
+			"Op" : {
+				"operation" : "addPercent"
+			}
+		},
+		{
+			"Id" : 10,
+			"Name" : "Health",
+			"Category" : "Passive",
+			"MaxLevel" : 5,
+			"Level" : 1,
+			"Magnitude" : 200,
+			"Op" : {
+				"operation" : "add"
+			}
+		},
+		{
+			"Id" : 11,
+			"Name" : "Health",
+			"Category" : "Passive",
+			"MaxLevel" : 5,
+			"Level" : 2,
+			"Magnitude" : 400,
+			"Op" : {
+				"operation" : "add"
+			}
+		},
+		{
+			"Id" : 12,
+			"Name" : "Health",
+			"Category" : "Passive",
+			"MaxLevel" : 5,
+			"Level" : 3,
+			"Magnitude" : 600,
+			"Op" : {
+				"operation" : "add"
+			}
+		},
+		{
+			"Id" : 13,
+			"Name" : "Health",
+			"Category" : "Passive",
+			"MaxLevel" : 5,
+			"Level" : 4,
+			"Magnitude" : 800,
+			"Op" : {
+				"operation" : "add"
+			}
+		},
+		{
+			"Id" : 14,
+			"Name" : "Health",
+			"Category" : "Passive",
+			"MaxLevel" : 5,
+			"Level" : 5,
+			"Magnitude" : 1000,
+			"Op" : {
+				"operation" : "add"
+			}
+		},
+		{
+			"Id" : 15,
+			"Name" : "Speed",
+			"Category" : "Passive",
+			"MaxLevel" : 5,
+			"Level" : 1,
+			"Magnitude" : 0.5,
+			"Op" : {
+				"operation" : "addPercent"
+			}
+		},
+		{
+			"Id" : 16,
+			"Name" : "Speed",
+			"Category" : "Passive",
+			"MaxLevel" : 5,
+			"Level" : 2,
+			"Magnitude" : 1,
+			"Op" : {
+				"operation" : "addPercent"
+			}
+		},
+		{
+			"Id" : 17,
+			"Name" : "Speed",
+			"Category" : "Passive",
+			"MaxLevel" : 5,
+			"Level" : 3,
+			"Magnitude" : 1.2,
+			"Op" : {
+				"operation" : "addPercent"
+			}
+		},
+		{
+			"Id" : 18,
+			"Name" : "Speed",
+			"Category" : "Passive",
+			"MaxLevel" : 5,
+			"Level" : 4,
+			"Magnitude" : 1.5,
+			"Op" : {
+				"operation" : "addPercent"
+			}
+		},
+		{
+			"Id" : 19,
+			"Name" : "Speed",
+			"Category" : "Passive",
+			"MaxLevel" : 5,
+			"Level" : 5,
+			"Magnitude" : 2,
+			"Op" : {
+				"operation" : "addPercent"
+			}
+		},
+		{
+			"Id" : 20,
+			"Name" : "Attack",
+			"Category" : "Passive",
+			"MaxLevel" : 5,
+			"Level" : 1,
+			"Magnitude" : 0.2,
+			"Op" : {
+				"operation" : "addPercent"
+			}
+		},
+		{
+			"Id" : 21,
+			"Name" : "Attack",
+			"Category" : "Passive",
+			"MaxLevel" : 5,
+			"Level" : 2,
+			"Magnitude" : 0.4,
+			"Op" : {
+				"operation" : "addPercent"
+			}
+		},
+		{
+			"Id" : 22,
+			"Name" : "Attack",
+			"Category" : "Passive",
+			"MaxLevel" : 5,
+			"Level" : 3,
+			"Magnitude" : 0.6,
+			"Op" : {
+				"operation" : "addPercent"
+			}
+		},
+		{
+			"Id" : 23,
+			"Name" : "Attack",
+			"Category" : "Passive",
+			"MaxLevel" : 5,
+			"Level" : 4,
+			"Magnitude" : 0.8,
+			"Op" : {
+				"operation" : "addPercent"
+			}
+		},
+		{
+			"Id" : 24,
+			"Name" : "Attack",
+			"Category" : "Passive",
+			"MaxLevel" : 5,
+			"Level" : 5,
+			"Magnitude" : 1,
+			"Op" : {
+				"operation" : "addPercent"
+			}
+		},
+		{
+			"Id" : 25,
 			"Name" : "Single Attack",
 			"Category" : "Active",
 			"MaxLevel" : 5,
 			"Level" : 1,
 			"Activation" : {
 				"Trigger" : "KeyDown",
-				"Path" : "",
-				"Range" : 1,
+				"Path" : "Prefab/Melee/Skill1",
+				"Range" : 3,
 				"Type": {
 					"SkillType" : "Projectile",
-					"MoveType" : "Targeting",
+					"MoveType" : "Straight",
 					"Speed" : 5
 				},
 				"CoolDown" : 3,
 				"MpCost" : 10,
 				"Damage" : 1.2,
+				"TargetCount" : 1,
 				"Op" : {
 				"operation" : "mul"
 				}
 			}
 		},
 		{
-			"Id" : 8,
+			"Id" : 26,
 			"Name" : "Single Attack",
 			"Category" : "Active",
 			"MaxLevel" : 5,
 			"Level" : 2,
 			"Activation" : {
 				"Trigger" : "KeyDown",
-				"Path" : "",
-				"Range" : 1,
+				"Path" : "Prefab/Melee/Skill1",
+				"Range" : 3,
 				"Type": {
 					"SkillType" : "Projectile",
-					"MoveType" : "Targeting",
+					"MoveType" : "Straight",
 					"Speed" : 5
 				},
 				"CoolDown" : 3,
 				"MpCost" : 11,
 				"Damage" : 1.4,
+				"TargetCount" : 1,
 				"Op" : {
 					"operation" : "mul"
 				}
 			}
 		},
 		{
-			"Id" : 9,
+			"Id" : 27,
 			"Name" : "Single Attack",
 			"Category" : "Active",
 			"MaxLevel" : 5,
 			"Level" : 3,
 			"Activation" : {
 				"Trigger" : "KeyDown",
-				"Path" : "",
-				"Range" : 1,
+				"Path" : "Prefab/Melee/Skill1",
+				"Range" : 3,
 				"Type": {
 					"SkillType" : "Projectile",
-					"MoveType" : "Targeting",
+					"MoveType" : "Straight",
 					"Speed" : 5
 				},
 				"CoolDown" : 2,
 				"MpCost" : 12,
 				"Damage" : 1.6,
+				"TargetCount" : 1,
 				"Op" : {
 					"operation" : "mul"
 				}
 			}
 		},
 		{
-			"Id" : 10,
+			"Id" : 28,
 			"Name" : "Single Attack",
 			"Category" : "Active",
 			"MaxLevel" : 5,
 			"Level" : 4,
 			"Activation" : {
 				"Trigger" : "KeyDown",
-				"Path" : "",
-				"Range" : 1,
+				"Path" : "Prefab/Melee/Skill1",
+				"Range" : 3,
 				"Type": {
 					"SkillType" : "Projectile",
-					"MoveType" : "Targeting",
+					"MoveType" : "Straight",
 					"Speed" : 5
 				},
 				"CoolDown" : 2,
 				"MpCost" : 13,
 				"Damage" : 1.8,
+				"TargetCount" : 1,
 				"Op" : {
 					"operation" : "mul"
 				}
 			}
 		},
 		{
-			"Id" : 11,
+			"Id" : 29,
 			"Name" : "Single Attack",
 			"Category" : "Active",
 			"MaxLevel" : 5,
 			"Level" : 5,
 			"Activation" : {
 				"Trigger" : "KeyDown",
-				"Path" : "",
-				"Range" : 1,
+				"Path" : "Prefab/Melee/Skill1",
+				"Range" : 3,
 				"Type": {
 					"SkillType" : "Projectile",
-					"MoveType" : "Targeting",
+					"MoveType" : "Straight",
 					"Speed" : 5
 				},
 				"CoolDown" : 2,
 				"MpCost" : 15,
+				"TargetCount" : 1,
 				"Damage" : 2,
 				"Op" : {
 					"operation" : "mul"
@@ -193,7 +396,7 @@
 			}
 		},
 		{
-			"Id" : 12,
+			"Id" : 30,
 			"Name": "Muliti Attack",
 			"Category" : "Active",
 			"MaxLevel" : 5,
@@ -212,7 +415,7 @@
 			}
 		},
 		{
-			"Id" : 13,
+			"Id" : 31,
 			"Name": "Muliti Attack",
 			"Category" : "Active",
 			"MaxLevel" : 5,
@@ -231,7 +434,7 @@
 			}
 		},
 		{
-			"Id" : 14,
+			"Id" : 32,
 			"Name": "Muliti Attack",
 			"Category" : "Active",
 			"MaxLevel" : 5,
@@ -250,7 +453,7 @@
 			}
 		},
 		{
-			"Id" : 15,
+			"Id" : 33,
 			"Name": "Muliti Attack",
 			"Category" : "Active",
 			"MaxLevel" : 5,
@@ -269,7 +472,7 @@
 			}
 		},
 		{
-			"Id" : 16,
+			"Id" : 34,
 			"Name": "Muliti Attack",
 			"Category" : "Active",
 			"MaxLevel" : 5,
@@ -287,5 +490,6 @@
 				}
 			}
 		}
+
 	]
 }

@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour
     public Action HitAction;
     public Transform Owner;
     public Transform Target;
-    public int Damage;
+    public float Damage;
     public Action<float> ExpAction;
 
     Rigidbody2D rb;

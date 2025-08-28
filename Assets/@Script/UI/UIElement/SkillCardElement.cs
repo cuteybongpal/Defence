@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,10 +15,7 @@ public class SkillCardElement : BaseUI
         OutLine,
         SkillIcon
     }
-    enum Buttons
-    {
-        SkillCardElement
-    }
+    public Action SelectAction;
     PlayableObject player;
     CardLevelData cardLevelData;
     public void Init(PlayableObject player, CardLevelData cardLevelData)
@@ -25,7 +23,6 @@ public class SkillCardElement : BaseUI
         this.player = player;
         this.cardLevelData = cardLevelData;
         Bind<Text>(typeof(Texts));
-        Bind<Button>(typeof(Buttons));
         Bind<Image>(typeof(Images));
 
         DataManager dM = ServiceLocator.Get<DataManager>();
@@ -43,11 +40,14 @@ public class SkillCardElement : BaseUI
 
         Sprite sprite = res.Load<Sprite>(cardLevelData.SpritePath);
         Get<Image>((int)Images.SkillIcon).sprite = sprite;
-        Get<Button>((int)Buttons.SkillCardElement).onClick.AddListener(GetOrUpGradeSkill);
+        GetComponent<Button>().onClick.AddListener(GetOrUpGradeSkill);
     }
     
     void GetOrUpGradeSkill()
     {
-
+        
+        DataManager dM = ServiceLocator.Get<DataManager>();
+        ServiceLocator.Get<LevelUpService>().ApplySkill(dM.GetSkillData(cardLevelData.SkillId), player);
+        SelectAction?.Invoke();
     }
 }

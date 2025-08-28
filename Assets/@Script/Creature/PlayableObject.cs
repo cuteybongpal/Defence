@@ -8,9 +8,11 @@ public class PlayableObject : MonoBehaviour, IControllable
     protected Animator anim;
     protected Rigidbody2D rb;
     protected Coroutine moveCoroutine;
-    protected AttackRange attackRange;
+    public AttackRange attackRange;
     protected Coroutine[] skillCoroutines = new Coroutine[3];
     public List<SkillData> Skills = new List<SkillData>();
+    List<ISkillUse> usableSkill = new List<ISkillUse>();
+    Dictionary<int, Coroutine> skillCoolDown = new Dictionary<int, Coroutine>();
 
     public PlayerData PlayerData;
     float currentHp;
@@ -38,7 +40,7 @@ public class PlayableObject : MonoBehaviour, IControllable
     public float CurrentMp
     {
         get { return currentMp; }
-        protected set
+        set
         {
             currentMp = value;
 
@@ -63,7 +65,6 @@ public class PlayableObject : MonoBehaviour, IControllable
             StopCoroutine(moveCoroutine);
             moveCoroutine = StartCoroutine(MoveToDestPos(mousePos));
         }
-
     }
     IEnumerator MoveToDestPos(Vector2 pos)
     {
@@ -87,7 +88,7 @@ public class PlayableObject : MonoBehaviour, IControllable
     {
         while (true)
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(1/PlayerData.AttackSpeed);
             while (attackRange.GetTarget() == null)
                 yield return null;
             BasicAttack();
@@ -111,19 +112,64 @@ public class PlayableObject : MonoBehaviour, IControllable
     }
     IEnumerator IncreaseLevel()
     {
+        if (Lv > PlayerData.RequiredExp.Count - 2)
+            yield break;
         while (currentExp >= PlayerData.RequiredExp[Lv])
         {
+            if (Lv > PlayerData.RequiredExp.Count - 2)
+                break;
             currentExp -= PlayerData.RequiredExp[Lv];
             Lv++;
-            //todo : 게임 매니저에 랩업한 거 알리고 스킬 찍게 해야함
+            //todo : 레벨업 서비스에 랩업한 거 알리고 스킬 찍게 해야함
+            LevelUpService lv = ServiceLocator.Get<LevelUpService>();
+            lv.LevelUp(PlayerData.Class, this);
             ExpChange?.Invoke(Lv, currentExp);
+            
             yield return new WaitForSeconds(0.1f);
             
         }
     }
-    public void KeyAction(KeyCode keyCode, Vector2 mousePos)
+     public void KeyAction(KeyCode keyCode, Vector2 mousePos)
     {
-        throw new NotImplementedException();
+        for (int i = 0; i < usableSkill.Count; i++)
+        {
+            if (usableSkill[i].SkillData.Category == "Passive")
+                continue;
+            if (Input.GetKeyDown(Define.KeyBinding[i]) && IsAvailiableSkill(i))
+            {
+                bool isSuccess = usableSkill[i].UseSkill(this);
+                if (isSuccess)
+                    skillCoolDown[i] = StartCoroutine(SkillCoolDown(i));
+            }
+        }
     }
-    
+    public void Add(SkillData skill, ISkillUse skillUse)
+    {
+        for (int i = 0; i < Skills.Count; i++)
+        {
+            if (skill.Name == Skills[i].Name)
+            {
+                Skills[i] = skill;
+                return;
+            }
+        }
+        Skills.Add(skill);
+        if (skillUse == null)
+            return;
+        usableSkill.Add(skillUse);
+    }
+    bool IsAvailiableSkill(int idx)
+    {
+        if (!skillCoolDown.ContainsKey(idx))
+        {
+            skillCoolDown[idx] = null;
+            return true;
+        }
+        return skillCoolDown[idx] == null;
+    }
+    IEnumerator SkillCoolDown(int idx)
+    {
+        yield return new WaitForSeconds(Skills[idx].Activation.CoolDown);
+        skillCoolDown[idx] = null;
+    }
 }

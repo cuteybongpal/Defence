@@ -7,7 +7,7 @@ public class Ranger : PlayableObject
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        PlayerData = ServiceLocator.Get<DataManager>().GetPlayerData("¿ø°Å¸®");
+        PlayerData = ServiceLocator.Get<DataManager>().GetPlayerData("Ranger");
 
         CurrentHp = PlayerData.Hp;
         CurrentMp = PlayerData.Mp;
