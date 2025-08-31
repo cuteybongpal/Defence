@@ -1,495 +1,357 @@
 {
-	"SkillDatas" :[
+	"SkillDatas" : [
 		{
 			"Id" : 0,
-			"Name" : "Crit",
-			"Category" : "Passive",
-			"MaxLevel" : 5,
+			"Name" : "Critical",
 			"Level" : 1,
-			"Magnitude" : 0.1,
-			"Op" : {
-				"operation" : "add"
-			}
+			"MaxLevel" : 5,
+			"Category" : "Passive",
+			"Effects" : [
+				{
+					"Type" : "Critical",
+					"Operator" : "add",
+					"Value" : 0.1
+				}
+			]
 		},
 		{
 			"Id" : 1,
-			"Name" : "Crit",
-			"Category" : "Passive",
-			"MaxLevel" : 5,
+			"Name" : "Critical",
 			"Level" : 2,
-			"Magnitude" : 0.2,
-			"Op" : {
-				"operation" : "add"
-			}
+			"MaxLevel" : 5,
+			"Category" : "Passive",
+			"Effects" : [
+				{
+					"Type" : "Critical",
+					"Operator" : "add",
+					"Value" : 0.2
+				}
+			]
 		},
 		{
 			"Id" : 2,
-			"Name" : "Crit",
-			"Category" : "Passive",
-			"MaxLevel" : 5,
+			"Name" : "Critical",
 			"Level" : 3,
-			"Magnitude" : 0.3,
-			"Op" : {
-				"operation" : "add"
-			}
+			"MaxLevel" : 5,
+			"Category" : "Passive",
+			"Effects" : [
+				{
+					"Type" : "Critical",
+					"Operator" : "add",
+					"Value" : 0.3
+				}
+			]
 		},
 		{
 			"Id" : 3,
-			"Name" : "Crit",
-			"Category" : "Passive",
-			"MaxLevel" : 5,
+			"Name" : "Critical",
 			"Level" : 4,
-			"Magnitude" : 0.4,
-			"Op" : {
-				"operation" : "add"
-			}
+			"MaxLevel" : 5,
+			"Category" : "Passive",
+			"Effects" : [
+				{
+					"Type" : "Critical",
+					"Operator" : "add",
+					"Value" : 0.4
+				}
+			]
 		},
 		{
 			"Id" : 4,
-			"Name" : "Crit",
-			"Category" : "Passive",
-			"MaxLevel" : 5,
+			"Name" : "Critical",
 			"Level" : 5,
-			"Magnitude" : 0.5,
-			"Op" : {
-				"operation" : "add"
-			}
+			"MaxLevel" : 5,
+			"Category" : "Passive",
+			"Effects" : [
+				{
+					"Type" : "Critical",
+					"Operator" : "add",
+					"Value" : 0.5
+				}
+			]
 		},
 		{
 			"Id" : 5,
 			"Name" : "AttackSpeed",
-			"Category" : "Passive",
-			"MaxLevel" : 5,
 			"Level" : 1,
-			"Magnitude" : 0.5,
-			"Op" : {
-				"operation" : "addPercent"
-			}
+			"MaxLevel" : 5,
+			"Category" : "Passive",
+			"Effects" : [
+				{
+					"Type" : "AttackSpeed",
+					"Operator" : "addPercent",
+					"Value" : 0.5
+				}
+			]
 		},
+		
 		{
 			"Id" : 6,
 			"Name" : "AttackSpeed",
-			"Category" : "Passive",
-			"MaxLevel" : 5,
 			"Level" : 2,
-			"Magnitude" : 1,
-			"Op" : {
-				"operation" : "addPercent"
-			}
+			"MaxLevel" : 5,
+			"Category" : "Passive",
+			"Effects" : [
+				{
+					"Type" : "AttackSpeed",
+					"Operator" : "addPercent",
+					"Value" : 1
+				}
+			]
 		},
+		
 		{
 			"Id" : 7,
 			"Name" : "AttackSpeed",
-			"Category" : "Passive",
-			"MaxLevel" : 5,
 			"Level" : 3,
-			"Magnitude" : 1.5,
-			"Op" : {
-				"operation" : "addPercent"
-			}
+			"MaxLevel" : 5,
+			"Category" : "Passive",
+			"Effects" : [
+				{
+					"Type" : "AttackSpeed",
+					"Operator" : "addPercent",
+					"Value" : 1.5
+				}
+			]
 		},
+		
 		{
 			"Id" : 8,
 			"Name" : "AttackSpeed",
-			"Category" : "Passive",
-			"MaxLevel" : 5,
 			"Level" : 4,
-			"Magnitude" : 2,
-			"Op" : {
-				"operation" : "addPercent"
-			}
+			"MaxLevel" : 5,
+			"Category" : "Passive",
+			"Effects" : [
+				{
+					"Type" : "AttackSpeed",
+					"Operator" : "addPercent",
+					"Value" : 2
+				}
+			]
 		},
 		{
 			"Id" : 9,
 			"Name" : "AttackSpeed",
-			"Category" : "Passive",
-			"MaxLevel" : 5,
 			"Level" : 5,
-			"Magnitude" : 3,
-			"Op" : {
-				"operation" : "addPercent"
-			}
+			"MaxLevel" : 5,
+			"Category" : "Passive",
+			"Effects" : [
+				{
+					"Type" : "AttackSpeed",
+					"Operator" : "addPercent",
+					"Value" : 3
+				}
+			]
 		},
 		{
 			"Id" : 10,
 			"Name" : "Health",
-			"Category" : "Passive",
-			"MaxLevel" : 5,
 			"Level" : 1,
-			"Magnitude" : 200,
-			"Op" : {
-				"operation" : "add"
-			}
+			"MaxLevel" : 5,
+			"Category" : "Passive",
+			"Effects" : [
+				{
+					"Type" : "Health",
+					"Operator" : "add",
+					"Value" : 200
+				}
+			]
 		},
 		{
 			"Id" : 11,
 			"Name" : "Health",
-			"Category" : "Passive",
-			"MaxLevel" : 5,
 			"Level" : 2,
-			"Magnitude" : 400,
-			"Op" : {
-				"operation" : "add"
-			}
+			"MaxLevel" : 5,
+			"Category" : "Passive",
+			"Effects" : [
+				{
+					"Type" : "Health",
+					"Operator" : "add",
+					"Value" : 400
+				}
+			]
 		},
 		{
 			"Id" : 12,
 			"Name" : "Health",
-			"Category" : "Passive",
-			"MaxLevel" : 5,
 			"Level" : 3,
-			"Magnitude" : 600,
-			"Op" : {
-				"operation" : "add"
-			}
+			"MaxLevel" : 5,
+			"Category" : "Passive",
+			"Effects" : [
+				{
+					"Type" : "Health",
+					"Operator" : "add",
+					"Value" : 600
+				}
+			]
 		},
 		{
 			"Id" : 13,
 			"Name" : "Health",
-			"Category" : "Passive",
-			"MaxLevel" : 5,
 			"Level" : 4,
-			"Magnitude" : 800,
-			"Op" : {
-				"operation" : "add"
-			}
+			"MaxLevel" : 5,
+			"Category" : "Passive",
+			"Effects" : [
+				{
+					"Type" : "Health",
+					"Operator" : "add",
+					"Value" : 800
+				}
+			]
 		},
 		{
 			"Id" : 14,
 			"Name" : "Health",
-			"Category" : "Passive",
-			"MaxLevel" : 5,
 			"Level" : 5,
-			"Magnitude" : 1000,
-			"Op" : {
-				"operation" : "add"
-			}
+			"MaxLevel" : 5,
+			"Category" : "Passive",
+			"Effects" : [
+				{
+					"Type" : "Health",
+					"Operator" : "add",
+					"Value" : 1000
+				}
+			]
 		},
 		{
 			"Id" : 15,
 			"Name" : "Speed",
-			"Category" : "Passive",
-			"MaxLevel" : 5,
 			"Level" : 1,
-			"Magnitude" : 0.5,
-			"Op" : {
-				"operation" : "addPercent"
-			}
+			"MaxLevel" : 5,
+			"Category" : "Passive",
+			"Effects" : [
+				{
+					"Type" : "Speed",
+					"Operator" : "addPercent",
+					"Value" : 0.5
+				}
+			]
 		},
 		{
 			"Id" : 16,
 			"Name" : "Speed",
-			"Category" : "Passive",
-			"MaxLevel" : 5,
 			"Level" : 2,
-			"Magnitude" : 1,
-			"Op" : {
-				"operation" : "addPercent"
-			}
+			"MaxLevel" : 5,
+			"Category" : "Passive",
+			"Effects" : [
+				{
+					"Type" : "Speed",
+					"Operator" : "addPercent",
+					"Value" : 1
+				}
+			]
 		},
 		{
 			"Id" : 17,
 			"Name" : "Speed",
-			"Category" : "Passive",
-			"MaxLevel" : 5,
 			"Level" : 3,
-			"Magnitude" : 1.2,
-			"Op" : {
-				"operation" : "addPercent"
-			}
+			"MaxLevel" : 5,
+			"Category" : "Passive",
+			"Effects" : [
+				{
+					"Type" : "Speed",
+					"Operator" : "addPercent",
+					"Value" : 1.2
+				}
+			]
 		},
 		{
 			"Id" : 18,
 			"Name" : "Speed",
-			"Category" : "Passive",
-			"MaxLevel" : 5,
 			"Level" : 4,
-			"Magnitude" : 1.5,
-			"Op" : {
-				"operation" : "addPercent"
-			}
+			"MaxLevel" : 5,
+			"Category" : "Passive",
+			"Effects" : [
+				{
+					"Type" : "Speed",
+					"Operator" : "addPercent",
+					"Value" : 1.5
+				}
+			]
 		},
 		{
 			"Id" : 19,
 			"Name" : "Speed",
-			"Category" : "Passive",
-			"MaxLevel" : 5,
 			"Level" : 5,
-			"Magnitude" : 2,
-			"Op" : {
-				"operation" : "addPercent"
-			}
+			"MaxLevel" : 5,
+			"Category" : "Passive",
+			"Effects" : [
+				{
+					"Type" : "Speed",
+					"Operator" : "addPercent",
+					"Value" : 2
+				}
+			]
 		},
 		{
 			"Id" : 20,
 			"Name" : "Attack",
-			"Category" : "Passive",
-			"MaxLevel" : 5,
 			"Level" : 1,
-			"Magnitude" : 0.2,
-			"Op" : {
-				"operation" : "addPercent"
-			}
+			"MaxLevel" : 5,
+			"Category" : "Passive",
+			"Effects" : [
+				{
+					"Type" : "Attack",
+					"Operator" : "addPercent",
+					"Value" : 0.2
+				}
+			]
 		},
 		{
 			"Id" : 21,
 			"Name" : "Attack",
-			"Category" : "Passive",
-			"MaxLevel" : 5,
 			"Level" : 2,
-			"Magnitude" : 0.4,
-			"Op" : {
-				"operation" : "addPercent"
-			}
+			"MaxLevel" : 5,
+			"Category" : "Passive",
+			"Effects" : [
+				{
+					"Type" : "Attack",
+					"Operator" : "addPercent",
+					"Value" : 0.4
+				}
+			]
 		},
 		{
 			"Id" : 22,
 			"Name" : "Attack",
-			"Category" : "Passive",
-			"MaxLevel" : 5,
 			"Level" : 3,
-			"Magnitude" : 0.6,
-			"Op" : {
-				"operation" : "addPercent"
-			}
+			"MaxLevel" : 5,
+			"Category" : "Passive",
+			"Effects" : [
+				{
+					"Type" : "Attack",
+					"Operator" : "addPercent",
+					"Value" : 0.6
+				}
+			]
 		},
 		{
 			"Id" : 23,
 			"Name" : "Attack",
-			"Category" : "Passive",
-			"MaxLevel" : 5,
 			"Level" : 4,
-			"Magnitude" : 0.8,
-			"Op" : {
-				"operation" : "addPercent"
-			}
+			"MaxLevel" : 5,
+			"Category" : "Passive",
+			"Effects" : [
+				{
+					"Type" : "Attack",
+					"Operator" : "addPercent",
+					"Value" : 0.8
+				}
+			]
 		},
 		{
 			"Id" : 24,
 			"Name" : "Attack",
+			"Level" : 5,
+			"MaxLevel" : 5,
 			"Category" : "Passive",
-			"MaxLevel" : 5,
-			"Level" : 5,
-			"Magnitude" : 1,
-			"Op" : {
-				"operation" : "addPercent"
-			}
-		},
-		{
-			"Id" : 25,
-			"Name" : "Single Attack",
-			"Category" : "Active",
-			"MaxLevel" : 5,
-			"Level" : 1,
-			"Activation" : {
-				"Trigger" : "KeyDown",
-				"Path" : "Prefab/Melee/Skill1",
-				"Range" : 3,
-				"Type": {
-					"SkillType" : "Projectile",
-					"MoveType" : "Straight",
-					"Speed" : 5
-				},
-				"CoolDown" : 3,
-				"MpCost" : 10,
-				"Damage" : 1.2,
-				"TargetCount" : 1,
-				"Op" : {
-				"operation" : "mul"
+			"Effects" : [
+				{
+					"Type" : "Attack",
+					"Operator" : "addPercent",
+					"Value" : 1
 				}
-			}
-		},
-		{
-			"Id" : 26,
-			"Name" : "Single Attack",
-			"Category" : "Active",
-			"MaxLevel" : 5,
-			"Level" : 2,
-			"Activation" : {
-				"Trigger" : "KeyDown",
-				"Path" : "Prefab/Melee/Skill1",
-				"Range" : 3,
-				"Type": {
-					"SkillType" : "Projectile",
-					"MoveType" : "Straight",
-					"Speed" : 5
-				},
-				"CoolDown" : 3,
-				"MpCost" : 11,
-				"Damage" : 1.4,
-				"TargetCount" : 1,
-				"Op" : {
-					"operation" : "mul"
-				}
-			}
-		},
-		{
-			"Id" : 27,
-			"Name" : "Single Attack",
-			"Category" : "Active",
-			"MaxLevel" : 5,
-			"Level" : 3,
-			"Activation" : {
-				"Trigger" : "KeyDown",
-				"Path" : "Prefab/Melee/Skill1",
-				"Range" : 3,
-				"Type": {
-					"SkillType" : "Projectile",
-					"MoveType" : "Straight",
-					"Speed" : 5
-				},
-				"CoolDown" : 2,
-				"MpCost" : 12,
-				"Damage" : 1.6,
-				"TargetCount" : 1,
-				"Op" : {
-					"operation" : "mul"
-				}
-			}
-		},
-		{
-			"Id" : 28,
-			"Name" : "Single Attack",
-			"Category" : "Active",
-			"MaxLevel" : 5,
-			"Level" : 4,
-			"Activation" : {
-				"Trigger" : "KeyDown",
-				"Path" : "Prefab/Melee/Skill1",
-				"Range" : 3,
-				"Type": {
-					"SkillType" : "Projectile",
-					"MoveType" : "Straight",
-					"Speed" : 5
-				},
-				"CoolDown" : 2,
-				"MpCost" : 13,
-				"Damage" : 1.8,
-				"TargetCount" : 1,
-				"Op" : {
-					"operation" : "mul"
-				}
-			}
-		},
-		{
-			"Id" : 29,
-			"Name" : "Single Attack",
-			"Category" : "Active",
-			"MaxLevel" : 5,
-			"Level" : 5,
-			"Activation" : {
-				"Trigger" : "KeyDown",
-				"Path" : "Prefab/Melee/Skill1",
-				"Range" : 3,
-				"Type": {
-					"SkillType" : "Projectile",
-					"MoveType" : "Straight",
-					"Speed" : 5
-				},
-				"CoolDown" : 2,
-				"MpCost" : 15,
-				"TargetCount" : 1,
-				"Damage" : 2,
-				"Op" : {
-					"operation" : "mul"
-				}
-			}
-		},
-		{
-			"Id" : 30,
-			"Name": "Muliti Attack",
-			"Category" : "Active",
-			"MaxLevel" : 5,
-			"Level" : 1,
-			"Activation" : {
-				"Trigger" : "KeyDown",
-				"Path" : "",
-				"Range" : 1,
-				"CoolDown" : 3,
-				"MpCost" : 12,
-				"Damage" : 1,
-				"TargetCount" : 2,
-				"Op" : {
-					"operation" : "mulPercent"
-				}
-			}
-		},
-		{
-			"Id" : 31,
-			"Name": "Muliti Attack",
-			"Category" : "Active",
-			"MaxLevel" : 5,
-			"Level" : 2,
-			"Activation" : {
-				"Trigger" : "KeyDown",
-				"Path" : "",
-				"Range" : 1,
-				"CoolDown" : 3,
-				"MpCost" : 15,
-				"Damage" : 1.2,
-				"TargetCount" : 3,
-				"Op" : {
-					"operation" : "mulPercent"
-				}
-			}
-		},
-		{
-			"Id" : 32,
-			"Name": "Muliti Attack",
-			"Category" : "Active",
-			"MaxLevel" : 5,
-			"Level" : 3,
-			"Activation" : {
-				"Trigger" : "KeyDown",
-				"Path" : "",
-				"Range" : 1,
-				"CoolDown" : 2,
-				"MpCost" : 18,
-				"Damage" : 1.2,
-				"TargetCount" : 3,
-				"Op" : {
-					"operation" : "mulPercent"
-				}
-			}
-		},
-		{
-			"Id" : 33,
-			"Name": "Muliti Attack",
-			"Category" : "Active",
-			"MaxLevel" : 5,
-			"Level" : 4,
-			"Activation" : {
-				"Trigger" : "KeyDown",
-				"Path" : "",
-				"Range" : 1,
-				"CoolDown" : 2,
-				"MpCost" : 20,
-				"Damage" : 1.4,
-				"TargetCount" : 4,
-				"Op" : {
-					"operation" : "mulPercent"
-				}
-			}
-		},
-		{
-			"Id" : 34,
-			"Name": "Muliti Attack",
-			"Category" : "Active",
-			"MaxLevel" : 5,
-			"Level" : 5,
-			"Activation" : {
-				"Trigger" : "KeyDown",
-				"Path" : "",
-				"Range" : 1,
-				"CoolDown" : 2,
-				"MpCost" : 22,
-				"Damage" : 1.4,
-				"TargetCount" : 5,
-				"Op" : {
-					"operation" : "mulPercent"
-				}
-			}
+			]
 		}
-
 	]
 }

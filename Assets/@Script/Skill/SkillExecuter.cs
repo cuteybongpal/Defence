@@ -14,13 +14,16 @@ public class SkillExecuter : MonoBehaviour
         if (Skill.SkillHitFilter == null)
             Debug.Log("null¿”");
         Collider2D collider = Skill.SkillHitFilter.ResolveHit(other);
-        Skill.SkillEffect.Apply(collider);
+        foreach (ISkillEffect effect in Skill.SkillEffect)
+        {
+            effect.Apply(collider);
+        }
     }
 }
 public class Skill
 {
     public Transform Target;
     public ISkillDeliver SkillMove;
-    public ISkillEffect SkillEffect;
     public ISkillHitResolver SkillHitFilter;
+    public ISkillEffect[] SkillEffect;
 }

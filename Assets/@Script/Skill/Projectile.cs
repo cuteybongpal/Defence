@@ -12,13 +12,12 @@ public class Projectile : MonoBehaviour
     public Action<float> ExpAction;
 
     Rigidbody2D rb;
-    public void Shoot(Vector3 origin, Vector3 dir, float maxDistance, float speed, float angleOffset)
+    public void Shoot(Vector3 origin, Vector3 dir, float maxDistance, float speed)
     {
         rb = GetComponent<Rigidbody2D>();
         transform.position = origin;
 
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, angle + angleOffset);
+        GoUtils.LookAt(gameObject, dir, 0);
         rb.linearVelocity = dir * speed;
         StartCoroutine(CheckOutOfRange(origin, maxDistance));
     }

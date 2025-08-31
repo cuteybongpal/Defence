@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3580960933654229739}
   - component: {fileID: 9215900446426332633}
-  - component: {fileID: 1079771876045946397}
+  - component: {fileID: 3284420378691101235}
   m_Layer: 0
-  m_Name: BasicAttack
+  m_Name: Skill3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +61,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1079771876045946397
+--- !u!114 &3284420378691101235
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -70,12 +70,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4375518821610686996}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 071fe872ecd885141a73a4f5d5508fa4, type: 3}
+  m_Script: {fileID: 11500000, guid: ecaff2de96493cd4e85194fd3b54f72f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Owner: {fileID: 0}
-  Target: {fileID: 0}
-  Damage: 0
 --- !u!1001 &8977222082487072083
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -128,9 +125,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasicAttack
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2297875976151813356, guid: e7011043d498ed545a61ddeae99b2076, type: 3}
-    - {fileID: 2792383185802560744, guid: e7011043d498ed545a61ddeae99b2076, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

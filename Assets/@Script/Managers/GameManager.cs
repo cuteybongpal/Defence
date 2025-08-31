@@ -97,7 +97,10 @@ public class GameManager : MonoBehaviour
         if (ui == null)
             return;
         ui.ChangeSliderValue(GameSceneUI.Sliders.ExpSlider, value / player.PlayerData.RequiredExp[lv]);
-        ui.ChangeTextValue(GameSceneUI.Texts.ExpText, $"{100 * value / player.PlayerData.RequiredExp[lv]:F1} %");
+        float l = 100 * value / player.PlayerData.RequiredExp[lv];
+        if (l > 100)
+            l = 100;
+        ui.ChangeTextValue(GameSceneUI.Texts.ExpText, $"{l:F1} %");
         ui.ChangeTextValue(GameSceneUI.Texts.LvText, $"Lv. {lv}");
     }
 }

@@ -5,10 +5,10 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 using JetBrains.Annotations;
-using NUnit.Framework;
 using Unity.Jobs;
 using Unity.VisualScripting;
 using UnityEngine;
+using static Define;
 
 public class DataManager : IService
 {
@@ -130,56 +130,68 @@ public class SkillData
 {
     public int Id;
     public string Name;
-    public string Category;
-    public int MaxLevel;
     public int Level;
-    public float Magnitude;
-    public Activator Activation;
-    public Operator Op;
-    
+    public int MaxLevel;
+    public string Category;
+    public string Trigger;
+    public string Path;
+    public SkillTargeting Targeting;
+    public SkillDelivery Delivery;
+    public List<SkillEffect> Effects;
+    public SkillPolicy Policy;
 }
 [Serializable]
-public class Operator
+public class SkillTargeting
 {
-    public string operation;
-    public float Operate(float a, float b)
+    public string Type;
+    public int MaxTargetCount;
+    public float Range;
+
+    public Define.Target TargetType { get { return Enum.Parse<Define.Target>(Type); } }
+}
+[Serializable]
+public class SkillDelivery
+{
+    public string Type;
+    public float Speed;
+    public int Count;
+    public float Range;
+    public string ShootStyle;
+    public bool FollowingTarget;
+
+    public Define.MoveType MoveType { get { return (Define.MoveType)Enum.Parse<Define.MoveType>(Type); } }
+}
+[Serializable]
+public class SkillEffect
+{
+    public string Type;
+    public string Operator;
+    public float Value;
+    public float Probability;
+    public int Frequency;
+
+    public float Operate(float a)
     {
-        switch (operation)
+        switch (Operator)
         {
             case "add":
-                return a + b;
+                return a + Value;
             case "mul":
-                return a * b;
+                return a * Value;
             case "addPercent":
-                return a + a * b;
+                return a + a * Value;
+            default:
+                return Value;
         }
-        Debug.Log(operation + " 해당 operation은 등록되어있지 않습니다.");
-        return 0;
     }
 }
 [Serializable]
-public class Activator
+public class SkillPolicy
 {
-    public string Trigger;
-    public string Path;
-    public float Range;
-    public ActivateType Type;
+    public string OutOfRange;
+    public string OnHit;
     public float CoolDown;
     public float MpCost;
-    public float Damage;
-    public int TargetCount;
-    public Operator Op;
-}
-[Serializable]
-public class ActivateType
-{
-    public string SkillType;
-    public string MoveType;
-    public float Speed;
-
-    public Define.MoveType MoveMethod { get { return (Define.MoveType)Enum.Parse(typeof(Define.MoveType), MoveType); } }
-    public Define.SkillType SkillT { get { return (Define.SkillType)Enum.Parse(typeof(Define.SkillType), SkillType); } }
-
 }
 [Serializable]
 public class CardDataLoader : ILoader<string, List<CardData>>

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class Dummy : MonoBehaviour, IHit
+public class Dummy : MonoBehaviour, IHit, IStun
 {
     public int MaxHp;
     public int Exp;
@@ -21,10 +21,14 @@ public class Dummy : MonoBehaviour, IHit
             Owner.GetComponent<PlayableObject>().GainExp(Exp * damage / MaxHp);
 
         currentHp -= damage;
-        Debug.Log($"데미지 입음! {damage}");
         if (currentHp <= 0)
         {
             Destroy(gameObject);
         }
+    }
+
+    public void Stun(float duration)
+    {
+        Debug.Log($"기절함 {duration}초");
     }
 }

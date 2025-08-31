@@ -45,7 +45,6 @@ public class SkillCardElement : BaseUI
     
     void GetOrUpGradeSkill()
     {
-        
         DataManager dM = ServiceLocator.Get<DataManager>();
         ServiceLocator.Get<LevelUpService>().ApplySkill(dM.GetSkillData(cardLevelData.SkillId), player);
         SelectAction?.Invoke();

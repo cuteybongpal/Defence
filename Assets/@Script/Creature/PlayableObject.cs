@@ -138,25 +138,41 @@ public class PlayableObject : MonoBehaviour, IControllable
             if (Input.GetKeyDown(Define.KeyBinding[i]) && IsAvailiableSkill(i))
             {
                 bool isSuccess = usableSkill[i].UseSkill(this);
+                
                 if (isSuccess)
                     skillCoolDown[i] = StartCoroutine(SkillCoolDown(i));
             }
         }
     }
-    public void Add(SkillData skill, ISkillUse skillUse)
+    public void Add(SkillData skill, ISkillUse skillUse = null)
     {
+        bool isDuplicate = false;
         for (int i = 0; i < Skills.Count; i++)
         {
             if (skill.Name == Skills[i].Name)
             {
                 Skills[i] = skill;
-                return;
+                isDuplicate = true;
+                break;
             }
         }
-        Skills.Add(skill);
+        if (!isDuplicate)
+            Skills.Add(skill);
+
         if (skillUse == null)
             return;
-        usableSkill.Add(skillUse);
+        isDuplicate = false;
+        for (int i = 0; i < usableSkill.Count; i++)
+        {
+            if (usableSkill[i].SkillData.Name == skill.Name)
+            {
+                usableSkill[i].SkillData = skill;
+                isDuplicate = true;
+                break;
+            }
+        }
+        if (!isDuplicate)
+            usableSkill.Add(skillUse);
     }
     bool IsAvailiableSkill(int idx)
     {
@@ -169,7 +185,7 @@ public class PlayableObject : MonoBehaviour, IControllable
     }
     IEnumerator SkillCoolDown(int idx)
     {
-        yield return new WaitForSeconds(Skills[idx].Activation.CoolDown);
+        yield return new WaitForSeconds(Skills[idx].Policy.CoolDown);
         skillCoolDown[idx] = null;
     }
 }

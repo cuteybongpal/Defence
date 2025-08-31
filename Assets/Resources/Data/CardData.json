@@ -191,28 +191,136 @@
 					"Description" : "120%의 공격력으로 공격함"
 				},
 				{
-					"Name" : "공격력 증가",
+					"Name" : "강공",
 					"SpritePath" : "Sprite/Skill/StrongAttack",
 					"SkillId" : 26,
 					"Description" : "140%의 공격력으로 공격함"
 				},
 				{
-					"Name" : "공격력 증가",
+					"Name" : "강공",
 					"SpritePath" : "Sprite/Skill/StrongAttack",
 					"SkillId" : 27,
 					"Description" : "160%의 공격력으로 공격함"
 				},
 				{
-					"Name" : "공격력 증가",
+					"Name" : "강공",
 					"SpritePath" : "Sprite/Skill/StrongAttack",
 					"SkillId" : 28,
 					"Description" : "180%의 공격력으로 공격함"
 				},
 				{
-					"Name" : "공격력 증가",
+					"Name" : "강공",
 					"SpritePath" : "Sprite/Skill/StrongAttack",
 					"SkillId" : 29,
 					"Description" : "200%의 공격력으로 공격함"
+				}
+			]
+		},
+		{
+			"Id" : 6,
+			"OwnerClass" : ["Melee"],
+			"Level": [
+				{
+					"Name" : "2대 때리기",
+					"SpritePath" : "Sprite/Skill/Multiple",
+					"SkillId" : 30,
+					"Description" : "100%의 공격력으로 2명 때림"
+				},
+				{
+					"Name" : "3대 때리기",
+					"SpritePath" : "Sprite/Skill/Multiple",
+					"SkillId" : 31,
+					"Description" : "120%의 공격력으로 3명 때림"
+				},
+				{
+					"Name" : "3대 더 빨리 때리기",
+					"SpritePath" : "Sprite/Skill/Multiple",
+					"SkillId" : 32,
+					"Description" : "120%의 공격력으로 3명 때림"
+				},
+				{
+					"Name" : "4대 때리기",
+					"SpritePath" : "Sprite/Skill/Multiple",
+					"SkillId" : 33,
+					"Description" : "140%의 공격력으로 4명 때림"
+				},
+				{
+					"Name" : "5대 때리기",
+					"SpritePath" : "Sprite/Skill/Multiple",
+					"SkillId" : 34,
+					"Description" : "140%의 공격력으로 5명 때림"
+				}
+			]
+		},
+		{
+			"Id" : 6,
+			"OwnerClass" : ["Melee"],
+			"Level": [
+				{
+					"Name" : "관통때리기",
+					"SpritePath" : "Sprite/Skill/Multiple",
+					"SkillId" : 35,
+					"Description" : "관통함"
+				},
+				{
+					"Name" : "관통때리기",
+					"SpritePath" : "Sprite/Skill/Multiple",
+					"SkillId" : 36,
+					"Description" : "관통함"
+				},
+				{
+					"Name" : "관통때리기",
+					"SpritePath" : "Sprite/Skill/Multiple",
+					"SkillId" : 37,
+					"Description" : "관통함"
+				},
+				{
+					"Name" : "관통때리기",
+					"SpritePath" : "Sprite/Skill/Multiple",
+					"SkillId" : 38,
+					"Description" : "관통함"
+				},
+				{
+					"Name" : "관통때리기",
+					"SpritePath" : "Sprite/Skill/Multiple",
+					"SkillId" : 39,
+					"Description" : "관통함"
+				}
+			]
+		},
+		{
+			"Id" : 6,
+			"OwnerClass" : ["Melee"],
+			"Level": [
+				{
+					"Name" : "스턴 공격",
+					"SpritePath" : "Sprite/Skill/StunAttack",
+					"SkillId" : 40,
+					"Description" : " 100%의 공격력으로 대상에게 50%의 확률로 스턴"
+				},
+				{
+					"Name" : "스턴 공격",
+					"SpritePath" : "Sprite/Skill/StunAttack",
+					"SkillId" : 41,
+					"Description" : "150%의 공격력으로 대상에게 50%의 확률로 스턴"
+				},
+				{
+					"Name" : "스턴 공격",
+					"SpritePath" : "Sprite/Skill/StunAttack",
+					"SkillId" : 42,
+					"Description" : "150%의 공격력으로 대상에게 100%의 확률로 스턴"
+				},
+				{
+					"Name" : "스턴 공격",
+					"SpritePath" : "Sprite/Skill/StunAttack",
+					"SkillId" : 43,
+					"Description" : "150%의 공격력으로 대상에게 100%의 확률로 스턴(타겟 2)"
+				},
+				{
+					"Name" : "스턴 공격",
+					"SpritePath" : "Sprite/Skill/StunAttack",
+					"SkillId" : 44,
+					"Description" : "150%의 공격력으로 대상에게 100%의 확률로 스턴(타겟 4)"
 				}
 			]
 		}

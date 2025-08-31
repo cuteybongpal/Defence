@@ -10,7 +10,20 @@ public class LevelUpService : IService
         List<CardData> cData = ServiceLocator.Get<DataManager>().GetCardDatas(className);
         List<CardData> availiableCard = new List<CardData>();
         player.PlayerData.Hp += player.PlayerData.GrowthHealth;
-        player.PlayerData.Attack += player.PlayerData.GrowthAttack;
+        SkillData atkBuff = null;
+        foreach(SkillData s in player.Skills)
+        {
+            if (s.Name == "Attack")
+            {
+                atkBuff = s;
+                break;
+            }
+
+        }
+        player.PlayerData.Attack += 10;
+        if (atkBuff != null)
+            player.PlayerData.Attack = atkBuff.Effects[0].Operate(ServiceLocator.Get<DataManager>().GetPlayerData(className).Attack + player.PlayerData.GrowthAttack * player.Lv);
+        
         for (int i = 0; i < cData.Count; i++)
         {
             CardData card = cData[i];
@@ -43,12 +56,10 @@ public class LevelUpService : IService
             {
                 int rnd = Random.Range(0, indexes.Count);
                 randomIndexes[i] = indexes[rnd];
-                Debug.Log(randomIndexes[i]);
                 indexes.RemoveAt(rnd);
             }
             for (int i = 0; i < randomIndexes.Length; i++)
             {
-                Debug.Log(availiableCard[randomIndexes[i]].Id);
                 finalSelectedCard.Add(availiableCard[randomIndexes[i]]);
             }
         }
@@ -69,7 +80,6 @@ public class LevelUpService : IService
                     }
                 }
             }
-            Debug.Log($"{finalSelectedCard[i].Id} : {level}");
             cardLevelDatas.Add(finalSelectedCard[i].Level[level]);
         }
         LvUpPopup lvUp = ServiceLocator.Get<UIManager>().ShowPopupUI<LvUpPopup>();
@@ -77,20 +87,16 @@ public class LevelUpService : IService
     }
     public void ApplySkill(SkillData skillData, PlayableObject player)
     {
-        DataManager dM = ServiceLocator.Get<DataManager>();
-
         switch (skillData.Category)
         {
             case "Passive":
                 SpecUp(skillData.Name, skillData, player);
                 break;
             case "Active":
-
+                AddPlayerSkill(skillData, player);
                 break;
         }
         Time.timeScale = 1;
-        
-        player.Add(skillData, new StraightSkillUse() { SkillData = skillData });
     }
     void SpecUp(string statName, SkillData skillData, PlayableObject player)
     {
@@ -98,26 +104,44 @@ public class LevelUpService : IService
 
         switch (statName)
         {
-            case "Crit":
-                player.PlayerData.Critical = skillData.Op.Operate(dM.GetPlayerData(player.PlayerData.Class).Critical, skillData.Magnitude);
-                Debug.Log($"크리티컬 확률 : {player.PlayerData.Critical}");
+            case "Critical":
+                player.PlayerData.Critical = skillData.Effects[0].Operate(dM.GetPlayerData(player.PlayerData.Class).Critical);
+                //Debug.Log($"크리티컬 확률 : {player.PlayerData.Critical}");
                 break;
             case "AttackSpeed":
-                player.PlayerData.AttackSpeed = skillData.Op.Operate(dM.GetPlayerData(player.PlayerData.Class).AttackSpeed, skillData.Magnitude);
-                Debug.Log($"공격 속도 : {player.PlayerData.AttackSpeed}");
+                player.PlayerData.AttackSpeed = skillData.Effects[0].Operate(dM.GetPlayerData(player.PlayerData.Class).AttackSpeed);
+                //Debug.Log($"공격 속도 : {player.PlayerData.AttackSpeed}");
                 break;
             case "Attack":
-                player.PlayerData.Attack = skillData.Op.Operate(dM.GetPlayerData(player.PlayerData.Class).Attack + player.PlayerData.GrowthAttack * player.Lv, skillData.Magnitude);
-                Debug.Log($"공격 속도 : {player.PlayerData.Attack}");
+                player.PlayerData.Attack = skillData.Effects[0].Operate(dM.GetPlayerData(player.PlayerData.Class).Attack + player.PlayerData.GrowthAttack * player.Lv);
+                //Debug.Log($"공격력 : {player.PlayerData.Attack}");
                 break;
             case "Health":
-                player.PlayerData.Hp = (int)skillData.Op.Operate(dM.GetPlayerData(player.PlayerData.Class).Hp + player.PlayerData.GrowthHealth * player.Lv, skillData.Magnitude);
-                Debug.Log($"공격 속도 : {player.PlayerData.Hp}");
+                player.PlayerData.Hp = (int)skillData.Effects[0].Operate(dM.GetPlayerData(player.PlayerData.Class).Hp + player.PlayerData.GrowthHealth * player.Lv);
+                //Debug.Log($"체력 : {player.PlayerData.Hp}");
                 break;
             case "Speed":
-                player.PlayerData.Speed = (int)skillData.Op.Operate(dM.GetPlayerData(player.PlayerData.Class).Speed, skillData.Magnitude);
-                Debug.Log($"공격 속도 : {player.PlayerData.Speed}");
+                player.PlayerData.Speed = (int)skillData.Effects[0].Operate(dM.GetPlayerData(player.PlayerData.Class).Speed);
+                //Debug.Log($"속도 : {player.PlayerData.Speed}");
                 break;
         }
+        player.Add(skillData);
+    }
+    void AddPlayerSkill(SkillData skillData, PlayableObject player)
+    {
+        ISkillUse skilluse = null;
+        if (skillData.Delivery.Count <= 1)
+        {
+            if (skillData.Delivery.MoveType == Define.MoveType.Following)
+                skilluse = new TargetingSkillUse() { SkillData = skillData };
+            else if (skillData.Delivery.MoveType== Define.MoveType.Straight)
+                skilluse = new StraightSkillUse() { SkillData = skillData };
+        }
+        else
+        {
+            if (skillData.Delivery.MoveType == Define.MoveType.Following)
+                skilluse = new MultipleTargetingSkillUse() { SkillData = skillData };
+        }
+        player.Add(skillData, skilluse);
     }
 }

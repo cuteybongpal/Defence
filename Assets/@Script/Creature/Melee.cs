@@ -32,6 +32,6 @@ public class Melee : PlayableObject
         bAttack.ExpAction = GainExp;
 
         Vector2 dir = (target.Transform.position - transform.position).normalized;
-        bAttack.Shoot(transform.position, dir, PlayerData.Range * 1.5f, 5, -90);
+        bAttack.Shoot(transform.position, dir, PlayerData.Range * 1.5f, 5);
     }
 }

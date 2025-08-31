@@ -18,8 +18,25 @@ public class Define
     }
     public enum MoveType
     {
-        Targeting,
+        Following,
         Straight
+    }
+    public enum Target
+    {
+        Enemy,
+        Ally,
+        Target
+    }
+    public enum HitAction
+    {
+        Destroy,
+        DamageDown,
+        Stun
+    }
+    public enum Frenquency
+    {
+        Once,
+        Each
     }
     public static KeyCode[] KeyBinding = { KeyCode.Q, KeyCode.W, KeyCode.E, KeyCode.R, KeyCode.T, KeyCode.Y };
 }

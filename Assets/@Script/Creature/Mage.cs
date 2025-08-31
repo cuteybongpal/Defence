@@ -32,6 +32,6 @@ public class Mage : PlayableObject
         skill.Damage = PlayerData.Attack;
         skill.ExpAction = GainExp;
 
-        skill.Shoot(transform.position, dir, 1.5f * PlayerData.Range, 7, -90);
+        skill.Shoot(transform.position, dir, 1.5f * PlayerData.Range, 7);
     }
 }
