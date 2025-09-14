@@ -289,7 +289,7 @@
 			]
 		},
 		{
-			"Id" : 6,
+			"Id" : 7,
 			"OwnerClass" : ["Melee"],
 			"Level": [
 				{
@@ -321,6 +321,114 @@
 					"SpritePath" : "Sprite/Skill/StunAttack",
 					"SkillId" : 44,
 					"Description" : "150%의 공격력으로 대상에게 100%의 확률로 스턴(타겟 4)"
+				}
+			]
+		},
+		{
+			"Id" : 8,
+			"OwnerClass" : ["Ranger"],
+			"Level": [
+				{
+					"Name" : "연속 공격",
+					"SpritePath" : "Sprite/Skill/SequenceAttack",
+					"SkillId" : 45,
+					"Description" : "80%의 공격력으로 대상에게 3발 공격"
+				},
+				{
+					"Name" : "연속 공격",
+					"SpritePath" : "Sprite/Skill/SequenceAttack",
+					"SkillId" : 46,
+					"Description" : "100%의 공격력으로 대상에게 3발 공격"
+				},
+				{
+					"Name" : "연속 공격",
+					"SpritePath" : "Sprite/Skill/SequenceAttack",
+					"SkillId" : 47,
+					"Description" : "120%의 공격력으로 대상에게 4발 공격"
+				},
+				{
+					"Name" : "연속 공격",
+					"SpritePath" : "Sprite/Skill/SequenceAttack",
+					"SkillId" : 48,
+					"Description" : "140%의 공격력으로 대상에게 4발 공격"
+				},
+				{
+					"Name" : "연속 공격",
+					"SpritePath" : "Sprite/Skill/SequenceAttack",
+					"SkillId" : 49,
+					"Description" : "160%의 공격력으로 대상에게 5발 공격"
+				}
+			]
+		},
+		{
+			"Id" : 9,
+			"OwnerClass" : ["Ranger"],
+			"Level": [
+				{
+					"Name" : "멀티 공격",
+					"SpritePath" : "Sprite/Skill/MultiAttack",
+					"SkillId" : 50,
+					"Description" : "사거리 내 적 2을 공격력의 80%으로 공격함"
+				},
+				{
+					"Name" : "멀티 공격",
+					"SpritePath" : "Sprite/Skill/MultiAttack",
+					"SkillId" : 51,
+					"Description" : "사거리 내 적 3을 공격력의 100%으로 공격함"
+				},
+				{
+					"Name" : "멀티 공격",
+					"SpritePath" : "Sprite/Skill/MultiAttack",
+					"SkillId" : 52,
+					"Description" : "사거리 내 적 4을 공격력의 120%으로 공격함"
+				},
+				{
+					"Name" : "멀티 공격",
+					"SpritePath" : "Sprite/Skill/MultiAttack",
+					"SkillId" : 53,
+					"Description" : "사거리 내 적 4을 공격력의 140%으로 공격함"
+				},
+				{
+					"Name" : "멀티 공격",
+					"SpritePath" : "Sprite/Skill/MultiAttack",
+					"SkillId" : 54,
+					"Description" : "사거리 내 적 5을 공격력의 160%으로 공격함"
+				}
+			]
+		},
+		{
+			"Id" : 10,
+			"OwnerClass" : ["Ranger"],
+			"Level": [
+				{
+					"Name" : "애쉬 W",
+					"SpritePath" : "Sprite/Skill/MultiPi",
+					"SkillId" : 55,
+					"Description" : "부채꼴 45도 모양으로 3발의 관통 100% 공격 한다."
+				},
+				{
+					"Name" : "애쉬 W",
+					"SpritePath" : "Sprite/Skill/MultiPi",
+					"SkillId" : 56,
+					"Description" : "부채꼴 45도 모양으로 3발의 관통 120% 공격 한다."
+				},
+				{
+					"Name" : "애쉬 W",
+					"SpritePath" : "Sprite/Skill/MultiPi",
+					"SkillId" : 57,
+					"Description" : "부채꼴 45도 모양으로 5발의 관통 120% 공격 한다."
+				},
+				{
+					"Name" : "애쉬 W",
+					"SpritePath" : "Sprite/Skill/MultiPi",
+					"SkillId" : 58,
+					"Description" : "부채꼴 45도 모양으로 5발의 관통 150% 공격 한다."
+				},
+				{
+					"Name" : "애쉬 W",
+					"SpritePath" : "Sprite/Skill/MultiPi",
+					"SkillId" : 59,
+					"Description" : "부채꼴 45도 모양으로 7발의 관통 120% 공격 한다."
 				}
 			]
 		}

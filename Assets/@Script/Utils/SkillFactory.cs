@@ -39,7 +39,11 @@ public class SkillBuilder
                 skillDeliver = new TargetingSkill() { Skill = arg.Skill, Target = arg.Target, Speed = arg.SkillData.Delivery.Speed };
                 break;
             case Define.MoveType.Straight:
-                skillDeliver = new StraightSkill() { Skill = arg.Skill, Dir = arg.Dir, Speed = arg.SkillData.Delivery.Speed, Range = arg.SkillData.Delivery.Range };
+                if (arg.SkillData.Policy.OutOfRange == "Destroy")
+                    skillDeliver = new StraightSkill() { Skill = arg.Skill, Dir = arg.Dir, Speed = arg.SkillData.Delivery.Speed, Range = arg.SkillData.Delivery.Range };
+                else
+                    // todo : 나중에 없애지 않는 걸로 바꾸기
+                    skillDeliver = new StraightSkill() { Skill = arg.Skill, Dir = arg.Dir, Speed = arg.SkillData.Delivery.Speed, Range = arg.SkillData.Delivery.Range };
                 break;
         }
         skill.SkillMove = skillDeliver;
@@ -78,12 +82,8 @@ public class SkillBuilder
                 case "DamageDown":
                     {
                         DamageDownSkillEffect eff = new DamageDownSkillEffect();
-                        eff.Skill = arg.Skill;
-                        eff.Damage = arg.SkillData.Effects[i].Operate(arg.Attack);
                         eff.DownMagnitude = arg.SkillData.Effects[i].Value;
-                        eff.Owner = arg.Owner;
                         eff.Frenquency = freq;
-                        eff.Crit = arg.Crit;
                         eff.Probability = arg.SkillData.Effects[i].Probability;
                         skillEffect = eff;
                     }
@@ -92,22 +92,24 @@ public class SkillBuilder
                     {
                         DestroySkillEffect eff = new DestroySkillEffect();
                         eff.Skill = arg.Skill;
-                        eff.Damage = arg.SkillData.Effects[0].Operate(arg.Attack);
-                        eff.Owner = arg.Owner;
-                        eff.Crit = arg.Crit;
                         skillEffect = eff;
                     }
                     break;
                 case "Stun":
                     {
                         StunSkillEffect eff = new StunSkillEffect();
-                        eff.Skill = arg.Skill;
-                        eff.Damage = arg.SkillData.Effects[i].Operate(arg.Attack);
-                        eff.Owner = arg.Owner;
-                        eff.Crit = arg.Crit;
                         eff.Frenquency = freq;
                         eff.Probability = arg.SkillData.Effects[i].Probability;
                         eff.StunMagnitude = arg.SkillData.Effects[i].Value;
+                        skillEffect = eff;
+                    }
+                    break;
+                case "Damage":
+                    {
+                        skill.Damage = arg.SkillData.Effects[i].Operate(arg.Attack);
+                        DamageSkillEffect eff = new DamageSkillEffect();
+                        eff.Crit = arg.Crit;
+                        eff.Owner = arg.Owner;
                         skillEffect = eff;
                     }
                     break;
@@ -205,36 +207,22 @@ public class SkillTargetHitResolver : ISkillHitResolver
 
 public class DestroySkillEffect : ISkillEffect
 {
-    public float Damage;
-    public Transform Owner;
     public Transform Skill;
-    public float Crit;
 
-    public void Apply(Collider2D targets)
+    public void Apply(Collider2D targets, Skill skill)
     {
         if (targets == null)
             return;
 
-        IHit hit = targets.GetComponent<IHit>();
-        if (hit == null)
-            return;
-        if (Random.value < Crit)
-            hit.Hit(Damage * 2, Owner);
-        else
-            hit.Hit(Damage, Owner);
         GameObject.Destroy(Skill.gameObject);
     }
 }
 public class DamageDownSkillEffect : ISkillEffect
 {
-    public float Damage;
-    public Transform Owner;
-    public Transform Skill;
     public float DownMagnitude;
     public int Frenquency;
-    public float Crit;
     public float Probability;
-    public void Apply(Collider2D targets)
+    public void Apply(Collider2D targets, Skill skill)
     {
         if (targets == null)
             return;
@@ -242,11 +230,6 @@ public class DamageDownSkillEffect : ISkillEffect
         IHit hit = targets.GetComponent<IHit>();
         if (hit == null)
             return;
-
-        if (Random.value < Crit)
-            hit.Hit(Damage * 2, Owner);
-        else
-            hit.Hit(Damage, Owner);
 
         if (Frenquency == 0)
             return;
@@ -255,20 +238,16 @@ public class DamageDownSkillEffect : ISkillEffect
             if (Random.value > Probability)
                 return;
         
-        Damage -= Damage * DownMagnitude;
+        skill.Damage -= skill.Damage * DownMagnitude;
         Frenquency--;
     }
 }
 public class StunSkillEffect : ISkillEffect
 {
-    public float Damage;
-    public Transform Owner;
-    public Transform Skill;
     public float StunMagnitude;
     public int Frenquency;
-    public float Crit;
     public float Probability;
-    public void Apply(Collider2D targets)
+    public void Apply(Collider2D targets, Skill skill)
     {
         if (targets == null)
             return;
@@ -276,26 +255,31 @@ public class StunSkillEffect : ISkillEffect
         IHit hit = targets.GetComponent<IHit>();
         if (hit == null)
             return;
-
-        if (Random.value < Crit)
-            hit.Hit(Damage * 2, Owner);
-        else
-            hit.Hit(Damage, Owner);
-
         if (Frenquency == 0)
             return;
-
+        float a = Random.value;
         if (Probability != 0)
-            if (Random.value > Probability)
-            {
-                GameObject.Destroy(Skill.gameObject);
+            if (a > Probability)
                 return;
-            }
         IStun stun = targets.GetComponent<IStun>();
         if (stun == null)
             return;
         stun.Stun(StunMagnitude);
         Frenquency--;
-        GameObject.Destroy(Skill.gameObject);
+    }
+}
+public class DamageSkillEffect : ISkillEffect
+{
+    public float Crit;
+    public Transform Owner;
+    public void Apply(Collider2D targets, Skill skill)
+    {
+        if (targets == null)
+            return;
+
+        IHit hit = targets.GetComponent<IHit>();
+        if (hit == null)
+            return;
+        hit.Hit(skill.Damage, Owner);
     }
 }

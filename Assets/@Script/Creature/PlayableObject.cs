@@ -129,7 +129,7 @@ public class PlayableObject : MonoBehaviour, IControllable
             
         }
     }
-     public void KeyAction(KeyCode keyCode, Vector2 mousePos)
+    public void KeyAction(KeyCode keyCode, Vector2 mousePos)
     {
         for (int i = 0; i < usableSkill.Count; i++)
         {
@@ -177,15 +177,12 @@ public class PlayableObject : MonoBehaviour, IControllable
     bool IsAvailiableSkill(int idx)
     {
         if (!skillCoolDown.ContainsKey(idx))
-        {
             skillCoolDown[idx] = null;
-            return true;
-        }
         return skillCoolDown[idx] == null;
     }
     IEnumerator SkillCoolDown(int idx)
     {
-        yield return new WaitForSeconds(Skills[idx].Policy.CoolDown);
+        yield return new WaitForSeconds(usableSkill[idx].SkillData.Policy.CoolDown);
         skillCoolDown[idx] = null;
     }
 }

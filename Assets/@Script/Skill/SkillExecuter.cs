@@ -16,13 +16,15 @@ public class SkillExecuter : MonoBehaviour
         Collider2D collider = Skill.SkillHitFilter.ResolveHit(other);
         foreach (ISkillEffect effect in Skill.SkillEffect)
         {
-            effect.Apply(collider);
+            effect.Apply(collider, Skill);
         }
     }
 }
 public class Skill
 {
     public Transform Target;
+    public float Damage;
+    
     public ISkillDeliver SkillMove;
     public ISkillHitResolver SkillHitFilter;
     public ISkillEffect[] SkillEffect;

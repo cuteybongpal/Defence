@@ -352,6 +352,1046 @@
 					"Value" : 1
 				}
 			]
+		},
+		{
+			"Id" : 25,
+			"Name" : "SingleAttack",
+			"Level" : 1,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Melee/Skill1",
+			"ShootType" : "Straight",
+			"Targeting": {
+				"Type":"Enemy",
+				"MaxTargetCount" : 1,
+				"Range" : 3
+			},
+			"Delivery": {
+				"Type": "Straight",
+				"Speed": 5,
+				"Count" : 1,
+				"Range" : 3
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 1.2},
+				{ "Type": "Destroy" }
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 3,
+				"MpCost" : 10
+			}
+		},
+		{
+			"Id" : 26,
+			"Name" : "SingleAttack",
+			"Level" : 2,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Melee/Skill1",
+			"ShootType" : "Straight",
+			"Targeting": {
+				"Type":"Enemy",
+				"MaxTargetCount" : 1,
+				"Range" : 3
+			},
+			"Delivery": {
+				"Type": "Straight",
+				"Speed": 5,
+				"Count" : 1,
+				"Range" : 3
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 1.4},
+				{ "Type": "Destroy" }
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 3,
+				"MpCost" : 11
+			}
+		},
+		{
+			"Id" : 27,
+			"Name" : "SingleAttack",
+			"Level" : 3,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Melee/Skill1",
+			"ShootType" : "Straight",
+			"Targeting": {
+				"Type":"Enemy",
+				"MaxTargetCount" : 1,
+				"Range" : 3
+			},
+			"Delivery": {
+				"Type": "Straight",
+				"Speed": 5,
+				"Count" : 1,
+				"Range" : 3
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 1.6},
+				{ "Type": "Destroy" }
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 2,
+				"MpCost" : 12
+			}
+		},
+		{
+			"Id" : 28,
+			"Name" : "SingleAttack",
+			"Level" : 4,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Melee/Skill1",
+			"ShootType" : "Straight",
+			"Targeting": {
+				"Type":"Enemy",
+				"MaxTargetCount" : 1,
+				"Range" : 3
+			},
+			"Delivery": {
+				"Type": "Straight",
+				"Speed": 5,
+				"Count" : 1,
+				"Range" : 3
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 1.8},
+				{ "Type": "Destroy" }
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 2,
+				"MpCost" : 13
+			}
+		},
+		{
+			"Id" : 29,
+			"Name" : "SingleAttack",
+			"Level" : 5,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Melee/Skill1",
+			"ShootType" : "Straight",
+			"Targeting": {
+				"Type":"Enemy",
+				"MaxTargetCount" : 1,
+				"Range" : 3
+			},
+			"Delivery": {
+				"Type": "Straight",
+				"Speed": 5,
+				"Count" : 1,
+				"Range" : 3
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 2},
+				{ "Type": "Destroy" }
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 2,
+				"MpCost" : 15
+			}
+		},
+		{
+			"Id" : 30,
+			"Name" : "MultiAttack",
+			"Level" : 1,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Melee/Skill1",
+			"ShootType" : "MultiShot",
+			"Targeting": {
+				"Type":"Enemy",
+				"MaxTargetCount" : 2,
+				"Range" : 3
+			},
+			"Delivery": {
+				"Type": "Following",
+				"Speed": 5,
+				"Count" : 2,
+				"Range" : 3
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 1},
+				{ "Type": "Destroy" }
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 3,
+				"MpCost" : 12
+			}
+		},
+		{
+			"Id" : 31,
+			"Name" : "MultiAttack",
+			"Level" : 2,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Melee/Skill1",
+			"ShootType" : "MultiShot",
+			"Targeting": {
+				"Type":"Enemy",
+				"MaxTargetCount" : 3,
+				"Range" : 3
+			},
+			"Delivery": {
+				"Type": "Following",
+				"Speed": 5,
+				"Count" : 3,
+				"Range" : 3
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 1.2},
+				{ "Type": "Destroy" }
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 3,
+				"MpCost" : 15
+			}
+		},
+		{
+			"Id" : 32,
+			"Name" : "MultiAttack",
+			"Level" : 3,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Melee/Skill1",
+			"ShootType" : "MultiShot",
+			"Targeting": {
+				"Type":"Enemy",
+				"MaxTargetCount" : 2,
+				"Range" : 3
+			},
+			"Delivery": {
+				"Type": "Straight",
+				"Speed": 5,
+				"Count" : 3,
+				"Range" : 3
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 1.2},
+				{ "Type": "Destroy" }
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 2,
+				"MpCost" : 18
+			}
+		},
+		{
+			"Id" : 33,
+			"Name" : "MultiAttack",
+			"Level" : 4,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Melee/Skill1",
+			"ShootType" : "MultiShot",
+			"Targeting": {
+				"Type":"Enemy",
+				"MaxTargetCount" : 4,
+				"Range" : 3
+			},
+			"Delivery": {
+				"Type": "Straight",
+				"Speed": 5,
+				"Count" : 4,
+				"Range" : 3
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 1.4},
+				{ "Type": "Destroy" }
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 2,
+				"MpCost" : 20 
+			}
+		},
+		{
+			"Id" : 34,
+			"Name" : "MultiAttack",
+			"Level" : 5,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Melee/Skill1",
+			"ShootType" : "MultiShot",
+			"Targeting": {
+				"Type":"Enemy",
+				"MaxTargetCount" : 5,
+				"Range" : 3
+			},
+			"Delivery": {
+				"Type": "Straight",
+				"Speed": 5,
+				"Count" : 5,
+				"Range" : 3
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 1.4},
+				{ "Type": "Destroy" }
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 2,
+				"MpCost" : 22
+			}
+		},
+		{
+			"Id" : 35,
+			"Name" : "PiercingAttack",
+			"Level" : 1,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Melee/Skill3",
+			"ShootType" : "Straight",
+			"Targeting": {
+				"Type":"Enemy",
+				"MaxTargetCount" : 0,
+				"Range" : 3
+			},
+			"Delivery": {
+				"Type": "Straight",
+				"Speed": 5,
+				"Count" : 1,
+				"Range" : 3
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 1},
+				{ "Type" : "DamageDown", "Value" : 0.5, "Frequency": 1}
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 3,
+				"MpCost" : 10
+			}
+		},
+		{
+			"Id" : 36,
+			"Name" : "PiercingAttack",
+			"Level" : 2,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Melee/Skill3",
+			"ShootType" : "Straight",
+			"Targeting": {
+				"Type":"Enemy",
+				"MaxTargetCount" : 0,
+				"Range" : 3
+			},
+			"Delivery": {
+				"Type": "Straight",
+				"Speed": 5,
+				"Count" : 1,
+				"Range" : 3
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 1},
+				{ "Type" : "DamageDown", "Value" : 0.3, "Frequency": 1}
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 3,
+				"MpCost" : 11
+			}
+		},
+		{
+			"Id" : 37,
+			"Name" : "PiercingAttack",
+			"Level" : 3,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Melee/Skill3",
+			"ShootType" : "Straight",
+			"Targeting": {
+				"Type":"Enemy",
+				"MaxTargetCount" : 0,
+				"Range" : 3
+			},
+			"Delivery": {
+				"Type": "Straight",
+				"Speed": 5,
+				"Count" : 1,
+				"Range" : 3
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 1.2},
+				{ "Type" : "DamageDown", "Value" : 0.3, "Frequency": 1}
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 2,
+				"MpCost" : 12
+			}
+		},
+		{
+			"Id" : 38,
+			"Name" : "PiercingAttack",
+			"Level" : 4,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Melee/Skill3",
+			"ShootType" : "Straight",
+			"Targeting": {
+				"Type":"Enemy",
+				"MaxTargetCount" : 0,
+				"Range" : 3
+			},
+			"Delivery": {
+				"Type": "Straight",
+				"Speed": 5,
+				"Count" : 1,
+				"Range" : 3
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 1.2},
+				{ "Type" : "DamageDown", "Value" : 0.2, "Frequency": 1}
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 2,
+				"MpCost" : 13
+			}
+		},
+		{
+			"Id" : 39,
+			"Name" : "PiercingAttack",
+			"Level" : 5,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Melee/Skill3",
+			"ShootType" : "Straight",
+			"Targeting": {
+				"Type":"Enemy",
+				"MaxTargetCount" : 0,
+				"Range" : 3
+			},
+			"Delivery": {
+				"Type": "Straight",
+				"Speed": 5,
+				"Count" : 1,
+				"Range" : 3
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 1.5},
+				{ "Type" : "DamageDown", "Value" : 0, "Frequency": 1}
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 2,
+				"MpCost" : 15
+			}
+		},
+		{
+			"Id" : 40,
+			"Name" : "StunAttack",
+			"Level" : 1,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Melee/Skill4",
+			"ShootType" : "Target",
+			"Targeting": {
+				"Type":"Enemy",
+				"MaxTargetCount" : 1,
+				"Range" : 3
+			},
+			"Delivery": {
+				"Type": "Following",
+				"Speed": 5,
+				"Count" : 1,
+				"Range" : 3
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 1 },
+				{ "Type" : "Stun", "Value" : 2, "Probability": 1 },
+				{ "Type": "Destroy"}
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 3,
+				"MpCost" : 10
+			}
+		},
+		{
+			"Id" : 41,
+			"Name" : "StunAttack",
+			"Level" : 2,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Melee/Skill4",
+			"ShootType" : "Target",
+			"Targeting": {
+				"Type":"Enemy",
+				"MaxTargetCount" : 1,
+				"Range" : 3
+			},
+			"Delivery": {
+				"Type": "Following",
+				"Speed": 5,
+				"Count" : 1,
+				"Range" : 3
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 1 },
+				{ "Type" : "Stun", "Value" : 2, "Probability": 0.5 },
+				{ "Type": "Destroy"}
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 3,
+				"MpCost" : 12
+			}
+		},
+		{
+			"Id" : 42,
+			"Name" : "StunAttack",
+			"Level" : 3,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Melee/Skill4",
+			"ShootType" : "Target",
+			"Targeting": {
+				"Type":"Enemy",
+				"MaxTargetCount" : 1,
+				"Range" : 3
+			},
+			"Delivery": {
+				"Type": "Following",
+				"Speed": 5,
+				"Count" : 1,
+				"Range" : 3
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 1.5 },
+				{ "Type" : "Stun", "Value" : 2, "Probability": 1 },
+				{ "Type": "Destroy"}
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 3,
+				"MpCost" : 14
+			}
+		},
+		{
+			"Id" : 43,
+			"Name" : "StunAttack",
+			"Level" : 4,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Melee/Skill4",
+			"ShootType" : "MultiShot",
+			"Targeting": {
+				"Type":"Enemy",
+				"MaxTargetCount" : 2,
+				"Range" : 3
+			},
+			"Delivery": {
+				"Type": "Following",
+				"Speed": 5,
+				"Count" : 2,
+				"Range" : 3
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 1.5 },
+				{ "Type" : "Stun", "Value" : 2, "Probability": 1 },
+				{ "Type": "Destroy"}
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 3,
+				"MpCost" : 16
+			}
+		},
+		{
+			"Id" : 44,
+			"Name" : "StunAttack",
+			"Level" : 5,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Melee/Skill4",
+			"ShootType" : "MultiShot",
+			"Targeting": {
+				"Type":"Enemy",
+				"MaxTargetCount" : 4,
+				"Range" : 3
+			},
+			"Delivery": {
+				"Type": "Following",
+				"Speed": 5,
+				"Count" : 4,
+				"Range" : 3
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 1.5 },
+				{ "Type" : "Stun", "Value" : 2, "Probability": 1 },
+				{ "Type": "Destroy"}
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 3,
+				"MpCost" : 20
+			}
+		},
+		{
+			"Id" : 45,
+			"Name" : "SequeceAttack",
+			"Level" : 1,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Ranger/Skill1",
+			"ShootType" : "SequenceShot",
+			"Targeting": {
+				"Type":"Enemy",
+				"MaxTargetCount" : 0,
+				"Range" : 3
+			},
+			"Delivery": {
+				"Type": "Straight",
+				"Speed": 5,
+				"Count" : 3,
+				"Range" : 5
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 0.8 },
+				{ "Type": "Destroy"}
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 5,
+				"MpCost" : 10
+			}
+		},
+		{
+			"Id" : 46,
+			"Name" : "SequeceAttack",
+			"Level" : 2,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Ranger/Skill1",
+			"ShootType" : "SequenceShot",
+			"Targeting": {
+				"Type":"Enemy",
+				"MaxTargetCount" : 0,
+				"Range" : 3
+			},
+			"Delivery": {
+				"Type": "Straight",
+				"Speed": 5,
+				"Count" : 3,
+				"Range" : 5
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 1 },
+				{ "Type": "Destroy"}
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 4,
+				"MpCost" : 12
+			}
+		},
+		{
+			"Id" : 47,
+			"Name" : "SequeceAttack",
+			"Level" : 3,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Ranger/Skill1",
+			"ShootType" : "SequenceShot",
+			"Targeting": {
+				"Type":"Enemy",
+				"MaxTargetCount" : 0,
+				"Range" : 3
+			},
+			"Delivery": {
+				"Type": "Straight",
+				"Speed": 5,
+				"Count" : 4,
+				"Range" : 5
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 1.2 },
+				{ "Type": "Destroy"}
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 4,
+				"MpCost" : 14
+			}
+		},
+		{
+			"Id" : 48,
+			"Name" : "SequeceAttack",
+			"Level" : 4,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Ranger/Skill1",
+			"ShootType" : "SequenceShot",
+			"Targeting": {
+				"Type":"Enemy",
+				"MaxTargetCount" : 0,
+				"Range" : 3
+			},
+			"Delivery": {
+				"Type": "Straight",
+				"Speed": 5,
+				"Count" : 4,
+				"Range" : 5
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 1.4 },
+				{ "Type": "Destroy"}
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 3,
+				"MpCost" : 16
+			}
+		},
+		{
+			"Id" : 49,
+			"Name" : "SequeceAttack",
+			"Level" : 5,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Ranger/Skill1",
+			"ShootType" : "SequenceShot",
+			"Targeting": {
+				"Type":"Enemy",
+				"MaxTargetCount" : 0,
+				"Range" : 3
+			},
+			"Delivery": {
+				"Type": "Straight",
+				"Speed": 5,
+				"Count" : 5,
+				"Range" : 5
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 1.5 },
+				{ "Type": "Destroy"}
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 3,
+				"MpCost" : 18
+			}
+		},
+		{
+			"Id" : 50,
+			"Name" : "MultiAttack",
+			"Level" : 1,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Ranger/Skill2",
+			"ShootType" : "MultiShot",
+			"Targeting": {
+				"Type":"Enemy",
+				"MaxTargetCount" : 2,
+				"Range" : 5
+			},
+			"Delivery": {
+				"Type": "Following",
+				"Speed": 5,
+				"Count" : 2,
+				"Range" : 5
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 0.8 },
+				{ "Type": "Destroy"}
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 4,
+				"MpCost" : 11
+			}
+		},
+		{
+			"Id" : 51,
+			"Name" : "MultiAttack",
+			"Level" : 2,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Ranger/Skill2",
+			"ShootType" : "MultiShot",
+			"Targeting": {
+				"Type":"Enemy",
+				"MaxTargetCount" : 3,
+				"Range" : 5
+			},
+			"Delivery": {
+				"Type": "Following",
+				"Speed": 5,
+				"Count" : 3,
+				"Range" : 5
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 1 },
+				{ "Type": "Destroy"}
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 4,
+				"MpCost" : 11
+			}
+		},
+		{
+			"Id" : 52,
+			"Name" : "MultiAttack",
+			"Level" : 3,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Ranger/Skill2",
+			"ShootType" : "MultiShot",
+			"Targeting": {
+				"Type":"Enemy",
+				"MaxTargetCount" : 4,
+				"Range" : 5
+			},
+			"Delivery": {
+				"Type": "Following",
+				"Speed": 5,
+				"Count" : 4,
+				"Range" : 5
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 1.2 },
+				{ "Type": "Destroy"}
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 3,
+				"MpCost" : 15
+			}
+		},
+		{
+			"Id" : 53,
+			"Name" : "MultiAttack",
+			"Level" : 4,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Ranger/Skill2",
+			"ShootType" : "MultiShot",
+			"Targeting": {
+				"Type":"Enemy",
+				"MaxTargetCount" : 4,
+				"Range" : 5
+			},
+			"Delivery": {
+				"Type": "Following",
+				"Speed": 5,
+				"Count" : 4,
+				"Range" : 5
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 1.4 },
+				{ "Type": "Destroy"}
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 3,
+				"MpCost" : 15
+			}
+		},
+		{
+			"Id" : 54,
+			"Name" : "MultiAttack",
+			"Level" : 5,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Ranger/Skill2",
+			"ShootType" : "MultiShot",
+			"Targeting": {
+				"Type":"Enemy",
+				"MaxTargetCount" : 5,
+				"Range" : 5
+			},
+			"Delivery": {
+				"Type": "Following",
+				"Speed": 5,
+				"Count" : 5,
+				"Range" : 5
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 1.5 },
+				{ "Type": "Destroy"}
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 2,
+				"MpCost" : 20
+			}
+		},
+		{
+			"Id" : 55,
+			"Name" : "MultiPierceAttack",
+			"Level" : 1,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Ranger/Skill3",
+			"ShootType" : "RadShot",
+			"Targeting": {
+				"Type":"Enemy"
+			},
+			"Delivery": {
+				"Type": "Straight",
+				"Speed": 5,
+				"Count" : 3,
+				"Range" : 5
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 1 }
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 5,
+				"MpCost" : 10
+			}
+		},
+		{
+			"Id" : 56,
+			"Name" : "MultiPierceAttack",
+			"Level" : 2,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Ranger/Skill3",
+			"ShootType" : "RadShot",
+			"Targeting": {
+				"Type":"Enemy"
+			},
+			"Delivery": {
+				"Type": "Straight",
+				"Speed": 5,
+				"Count" : 3,
+				"Range" : 6
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 1.2 }
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 4,
+				"MpCost" : 11
+			}
+		},
+		{
+			"Id" : 57,
+			"Name" : "MultiPierceAttack",
+			"Level" : 3,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Ranger/Skill3",
+			"ShootType" : "RadShot",
+			"Targeting": {
+				"Type":"Enemy"
+			},
+			"Delivery": {
+				"Type": "Straight",
+				"Speed": 5,
+				"Count" : 5,
+				"Range" : 6
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 1.2 }
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 4,
+				"MpCost" : 12
+			}
+		},
+		{
+			"Id" : 58,
+			"Name" : "MultiPierceAttack",
+			"Level" : 4,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Ranger/Skill3",
+			"ShootType" : "RadShot",
+			"Targeting": {
+				"Type":"Enemy"
+			},
+			"Delivery": {
+				"Type": "Straight",
+				"Speed": 5,
+				"Count" : 5,
+				"Range" : 6
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 1.5 }
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 3,
+				"MpCost" : 13
+			}
+		},
+		{
+			"Id" : 59,
+			"Name" : "MultiPierceAttack",
+			"Level" : 5,
+			"MaxLevel" : 5,
+			"Category" : "Active",
+			"Trigger" : "KeyDown",
+			"Path": "Prefab/Ranger/Skill3",
+			"ShootType" : "RadShot",
+			"Targeting": {
+				"Type":"Enemy"
+			},
+			"Delivery": {
+				"Type": "Straight",
+				"Speed": 5,
+				"Count" : 7,
+				"Range" : 7
+			},
+			"Effects" : [
+				{ "Type":"Damage", "Operator" : "mul", "Value" : 1.2 }
+			],
+			"Policy" : {
+				"OutOfRange": "Destory",
+				"CoolDown" : 3,
+				"MpCost" : 14
+			}
 		}
 	]
 }

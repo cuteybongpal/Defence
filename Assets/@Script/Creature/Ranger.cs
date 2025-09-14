@@ -33,6 +33,6 @@ public class Ranger : PlayableObject
         skill.HitAction += () => Destroy(go);
         skill.ExpAction = GainExp;
 
-        skill.Shoot(transform.position, dir, 1.5f * PlayerData.Range, 100);
+        skill.Shoot(transform.position, dir, 1.5f * PlayerData.Range, 10);
     }
 }

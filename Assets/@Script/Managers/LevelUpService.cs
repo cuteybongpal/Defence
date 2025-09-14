@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using UnityEditor.PackageManager;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 public class LevelUpService : IService
@@ -130,18 +130,26 @@ public class LevelUpService : IService
     void AddPlayerSkill(SkillData skillData, PlayableObject player)
     {
         ISkillUse skilluse = null;
-        if (skillData.Delivery.Count <= 1)
+        
+        switch (skillData.ShootType)
         {
-            if (skillData.Delivery.MoveType == Define.MoveType.Following)
-                skilluse = new TargetingSkillUse() { SkillData = skillData };
-            else if (skillData.Delivery.MoveType== Define.MoveType.Straight)
+            case "RadShot":
+                skilluse = new RadSkillUse() { SkillData = skillData };
+                break;
+            case "MultiShot":
+                skilluse = new MultipleSkillUse() { SkillData = skillData };
+                break;
+            case "SequenceShot":
+                skilluse = new SeqeunceSkillUse() { SkillData = skillData };
+                break;
+            case "Straight":
                 skilluse = new StraightSkillUse() { SkillData = skillData };
+                break;
+            case "Target":
+                skilluse = new TargetingSkillUse() { SkillData = skillData };
+                break;
         }
-        else
-        {
-            if (skillData.Delivery.MoveType == Define.MoveType.Following)
-                skilluse = new MultipleTargetingSkillUse() { SkillData = skillData };
-        }
+        Debug.Log(skilluse);
         player.Add(skillData, skilluse);
     }
 }

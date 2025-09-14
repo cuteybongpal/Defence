@@ -11,7 +11,7 @@ public interface ISkillHitResolver
 }
 public interface ISkillEffect
 {
-    public void Apply(Collider2D targets);
+    public void Apply(Collider2D targets, Skill skill);
 }
 public interface ISkillUse
 {

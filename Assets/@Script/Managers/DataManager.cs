@@ -135,6 +135,7 @@ public class SkillData
     public string Category;
     public string Trigger;
     public string Path;
+    public string ShootType;
     public SkillTargeting Targeting;
     public SkillDelivery Delivery;
     public List<SkillEffect> Effects;
@@ -156,8 +157,6 @@ public class SkillDelivery
     public float Speed;
     public int Count;
     public float Range;
-    public string ShootStyle;
-    public bool FollowingTarget;
 
     public Define.MoveType MoveType { get { return (Define.MoveType)Enum.Parse<Define.MoveType>(Type); } }
 }
@@ -189,7 +188,6 @@ public class SkillEffect
 public class SkillPolicy
 {
     public string OutOfRange;
-    public string OnHit;
     public float CoolDown;
     public float MpCost;
 }
